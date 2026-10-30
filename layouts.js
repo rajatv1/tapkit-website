@@ -18,7 +18,7 @@
     var fig = btn.closest('.lay'), who = fig && fig.querySelector('figcaption i');
     document.getElementById('layboxT').textContent = btn.getAttribute('data-name') + ' layout';
     document.getElementById('layboxWho').textContent = who ? who.textContent : '';
-    frame.src = APP + btn.getAttribute('data-open') + '?embed=1&nonav=1';
+    frame.src = APP + btn.getAttribute('data-open') + '/?embed=1&nonav=1';
     box.showModal();
     document.documentElement.classList.add('wl-open');
   }

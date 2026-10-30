@@ -65,13 +65,15 @@ To use a form service instead (e.g. Formspree), paste its form URL into `WAITLIS
 
 ## The live demo
 
-The hero demo (`#demo`) loads pages from the tapkit server named in its `data-app` attribute (`http://localhost:4500` for now; change it to the live domain on upload). The three demo creators — `ananya.glows`, `kabir.beats`, `meera.fit` — come from `tapkit-app/server/scripts/seed-demo.js`:
+The hero demo (`#demo`) and the layouts gallery show the demo creators' pages from `templates/` (the `data-app` attribute), so the site needs no running server. They are plain copies, shown look-only: nothing can be bought or signed up for in them. The demo creators — `ananya.glows`, `kabir.beats`, `meera.fit`, `rohan.studio`, `tara.frames`, `daniel.models` — come from `tapkit-app/server/scripts/seed-demo.js`. After changing them (or the page design), refresh the copies:
 
 ```
-cd ../tapkit-app/server && node scripts/seed-demo.js   # with the server running; safe to re-run
+cd ../tapkit-app/server
+SEED_DEMO=1 npm start                    # in one terminal: starts the server and builds the demo creators
+node scripts/export-templates.js         # in another: rewrites ../../tapkit-website/templates
 ```
 
-With the server in test mode the product pages take a labelled test payment and no money moves; each test purchase is recorded as an order on the demo account. If the server can't be reached, the phone shows "The live demo is offline" with a Try again button. If you change the demo creator's SuperDMs in the seed, change `AUTOMATIONS` in `demo.js` to match.
+If you change the demo creator's SuperDMs in the seed, change `AUTOMATIONS` in `demo.js` to match.
 
 ## Not wired up yet
 

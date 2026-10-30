@@ -1,0 +1,41 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Mobile UI kit for Figma | Rohan Mehta</title><meta name="description" content="180 screens and components for a mobile app, ready to edit in Figma.">
+<link rel="icon" href="/templates/assets/logo.svg">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Outfit:wght@400;500;600;700&family=IBM+Plex+Sans:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@400;600;700&family=DM+Sans:wght@400;500;700&family=Poppins:wght@400;600;700&family=Space+Grotesk:wght@400;500;700&family=Playfair+Display:wght@500;700&family=JetBrains+Mono:wght@400;600&family=Anton&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/templates/assets/public.css">
+<script>/* ?embed=1: shown inside another site (the tapkit website's live demo), so no scrollbar; it sticks for the rest of that frame's visit */
+try{if(/[?&]embed=1/.test(location.search))sessionStorage.setItem('tk_embed','1');if(sessionStorage.getItem('tk_embed'))document.documentElement.classList.add('embed')}catch(e){}
+/* ?nonav=1: a look-only preview: everything still reacts to a tap, but no link opens and no form is sent */
+if(/[?&]nonav=1/.test(location.search)){document.documentElement.classList.add('nonav');
+document.addEventListener('click',function(e){var t=e.target.closest&&e.target.closest('a,button,[role=button]');if(!t)return;e.preventDefault();
+t.classList.remove('tapped');void t.offsetWidth;t.classList.add('tapped');setTimeout(function(){t.classList.remove('tapped')},260)},true);
+document.addEventListener('submit',function(e){e.preventDefault()},true)}</script>
+<style>:root{--bg:#F5F2EC;--card:#FFFFFF;--fg:#17141C;--muted:#6E6874;--line:rgba(23,20,28,.07);--accent:#281A3B;--accent2:#E4C176;--on-accent:#ffffff;--font:'Outfit', system-ui, sans-serif;--btn-radius:14px;--card-radius:18px;--panel:#FFFFFF;--panel-fg:#17141C;--panel-muted:#6E6874;--card-fg:#17141C;--card-muted:#6E6874}</style>
+</head><body class="" data-btn="plain" data-anim="fade"><main class="product">
+    <a class="back" href="/rohan.studio">← Rohan Mehta</a>
+    <div class="pcover" style="background-image:url('/templates/uploads/e9f73ed291641109e19accb9.jpg')"></div>
+    <div class="pgrid2">
+      <section><span class="pcard__type">Digital product</span><h1>Mobile UI kit for Figma</h1>
+        <div class="desc">180 screens and components for a mobile app, ready to edit in Figma.</div>
+        <dl class="facts"><div><dt>Includes</dt><dd>1 file</dd></div></dl>
+        </section>
+      <aside class="card checkout"><div class="price"><s>₹999</s> ₹499</div>
+        <form id="buy" data-product="p_-HGpprlyzA6D" data-mode="test" data-free="0" novalidate>
+          
+          
+          <div class="f"><label for="name">Name *</label><input id="name" name="name" required autocomplete="name"></div>
+          <div class="f"><label for="email">Email *</label><input id="email" name="email" type="email" required autocomplete="email"></div>
+          <div class="f"><label for="phone">Phone</label><input id="phone" name="phone" type="tel"  autocomplete="tel" placeholder="10-digit mobile"></div>
+          
+          <details class="coupon"><summary>Have a coupon?</summary><div class="row"><input id="coupon" placeholder="CODE" autocapitalize="characters"><button type="button" class="btn btn--ghost" id="applyCoupon">Apply</button></div><output id="couponOut"></output></details>
+          <div class="total" id="total"></div>
+          <button class="btn btn--lg btn--block" id="pay">Buy now</button>
+          <p class="note">Test mode: no real payment is taken. Add Razorpay keys to accept money.</p>
+          <output id="err" class="err" role="alert"></output></form>
+      </aside></div><footer class="foot">Made with <a href="/">tapkit</a> · <a href="/purchases">My purchases</a></footer></main>
+    <div id="testpay" class="modal" hidden><div class="card"><h3>Test payment</h3><p>This store has no payment gateway connected, so this is a simulated payment. No money moves.</p>
+      <div class="price" id="testAmt"></div><div class="row"><button class="btn btn--ghost" id="testCancel">Cancel</button><button class="btn" id="testOk">Complete test payment</button></div></div></div>
+    <script>window.CHECKOUT={"price":499,"pwyw":false,"type":"payment_page","product":"p_-HGpprlyzA6D"}</script>
+    <script src="/templates/assets/checkout.js" defer></script></body></html>

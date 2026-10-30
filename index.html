@@ -70,9 +70,9 @@
 
     </div>
 
-    <!-- Live demo: data-app is where the tapkit server runs. The demo creators come from
-         tapkit-app/server/scripts/seed-demo.js — change this to the live domain on upload. -->
-    <div class="tabs hero-demo" id="demo" data-app="http://localhost:4500">
+    <!-- Live demo: data-app is where the demo creators' pages are. They are this site's own copies in
+         templates/, saved from the tapkit server by tapkit-app/server/scripts/export-templates.js. -->
+    <div class="tabs hero-demo" id="demo" data-app="/templates">
       <div class="tabs__bar" role="tablist" aria-label="Demo">
         <button class="tabs__btn is-active" type="button" role="tab" aria-selected="true" data-demo-tab="page">Bio page</button>
         <button class="tabs__btn" type="button" role="tab" aria-selected="false" data-demo-tab="dm">SuperDM</button>
@@ -191,8 +191,7 @@
 </section>
 
 <!-- ───────────────────────── LAYOUTS ─────────────────────────
-     Live, look-only previews (?embed=1&nonav=1) of the demo creators from tapkit-app/server/scripts/seed-demo.js;
-     the pages load from the server in #demo's data-app (demo.js). -->
+     Look-only previews (?embed=1&nonav=1) of the demo creators' pages in templates/ (#demo's data-app, demo.js). -->
 <section class="section layouts" id="layouts">
   <div class="container">
     <div class="section__head">

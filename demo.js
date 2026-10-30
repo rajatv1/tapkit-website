@@ -59,14 +59,15 @@
     if (!APP) { online = false; $$('.demo-offline').forEach(function (o) { o.hidden = false; }); return Promise.resolve(online); }
     var ctl = window.AbortController ? new AbortController() : null;
     var t = setTimeout(function () { if (ctl) ctl.abort(); }, 3000);
-    return fetch(APP + '/' + USER, { mode: 'no-cors', cache: 'no-store', signal: ctl && ctl.signal })
+    return fetch(APP + '/' + USER + '/', { mode: 'no-cors', cache: 'no-store', signal: ctl && ctl.signal })
       .then(function () { online = true; }, function () { online = false; })
       .then(function () { clearTimeout(t); $$('.demo-offline').forEach(function (o) { o.hidden = online; }); return online; });
   }
   function load(frame, path, urlEl, look) {
     // ?embed=1: the page hides its own scrollbar while it is inside this preview;
     // ?nonav=1 (the Bio page tab): everything reacts to a tap but nothing opens
-    check().then(function (ok) { if (ok) frame.src = APP + path + '?embed=1' + (look ? '&nonav=1' : ''); });
+    // the pages are plain copies (templates/), so checkout can't run: every preview is look-only
+    check().then(function (ok) { if (ok) frame.src = APP + path + '/?embed=1&nonav=1'; });
     if (urlEl) urlEl.textContent = 'tapkit.in' + path;
   }
   // the demo creators (seed-demo.js) and which page / product each preview is showing
@@ -82,7 +83,7 @@
   }
   // the layouts gallery below the hero: each tile is a creator's page, look-only, loaded once the server answers
   check().then(function (ok) {
-    if (ok) $$('[data-lay]', document).forEach(function (f) { f.src = APP + f.getAttribute('data-lay') + '?embed=1&nonav=1'; });
+    if (ok) $$('[data-lay]', document).forEach(function (f) { f.src = APP + f.getAttribute('data-lay') + '/?embed=1&nonav=1'; });
   });
 
   // "See examples" under the hero sign-up: show the next demo creator's page in the preview

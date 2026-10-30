@@ -1,0 +1,574 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>tapkit — Stop sending links. Send your work.</title>
+<meta name="description" content="A bio page you build step by step, SuperDM that sends your link the second someone comments, short links that count every tap, and products your followers pay for. Free to start. No follower minimum." />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="styles.css" />
+<link rel="icon" type="image/svg+xml" href="assets/logo-mark.svg" />
+</head>
+<body>
+
+<!-- ───────────────────────── NAV ───────────────────────── -->
+<header class="nav" id="nav">
+  <div class="nav__inner container">
+    <a class="brand" href="#top" aria-label="tapkit home"><img class="brand__dots" src="assets/logo-mark.svg" alt="" width="31" height="28" /><span class="brand__word">tapkit</span></a>
+
+    <nav class="nav__menu" aria-label="Primary">
+      <div class="nav__item has-menu" id="productMenu">
+        <button class="nav__link" type="button" aria-expanded="false" aria-controls="productDropdown">Product <svg class="chev" viewBox="0 0 12 12" width="10" height="10" aria-hidden="true"><path d="M3 4.5L6 7.5l3-3" stroke="currentColor" stroke-width="1.6" fill="none" stroke-linecap="round"/></svg></button>
+        <div class="dropdown" id="productDropdown">
+          <a href="superdm.html"><span class="dd-ico">💬</span><span><b>SuperDM</b><i>They comment a word, your DM goes out</i></span></a>
+          <a href="bio-page.html"><span class="dd-ico">▤</span><span><b>Bio page</b><i>Your page, built step by step</i></span></a>
+          <a href="links.html"><span class="dd-ico">↗</span><span><b>Links</b><i>Short links that count every tap</i></span></a>
+          <a href="products.html"><span class="dd-ico">🔓</span><span><b>Products</b><i>Sell files and locked content, give away freebies</i></span></a>
+          <a href="workflows.html"><span class="dd-ico">⚡</span><span><b>Workflows</b><i>Ready-made SuperDM setups for your niche</i></span></a>
+          <a href="business-connect.html"><span class="dd-ico">🏪</span><span><b>Business connect <em class="dd-soon">Coming later</em></b><i>Local shops and creators, working together</i></span></a>
+        </div>
+      </div>
+      <a class="nav__link" href="creators-agency.html">For agencies</a>
+      <a class="nav__link" href="pricing.html">Pricing</a>
+      <a class="nav__link" href="#faq">FAQ</a>
+    </nav>
+
+    <div class="nav__actions">
+      <a class="nav__link nav__login" href="login.html">Log in</a>
+      <a class="btn btn--dark" href="#waitlist">Join the waitlist</a>
+      <button class="nav__burger" id="burger" aria-label="Menu" aria-expanded="false"><span></span><span></span></button>
+    </div>
+  </div>
+  <div class="mobile-menu" id="mobileMenu">
+    <span class="mobile-menu__label">Product</span><a class="mobile-menu__sub" href="superdm.html">SuperDM</a><a class="mobile-menu__sub" href="bio-page.html">Bio page</a><a class="mobile-menu__sub" href="links.html">Links</a><a class="mobile-menu__sub" href="products.html">Products</a><a class="mobile-menu__sub" href="workflows.html">Workflows</a><a class="mobile-menu__sub" href="business-connect.html">Business connect</a><a href="creators-agency.html">For agencies</a><a href="pricing.html">Pricing</a><a href="#faq">FAQ</a>
+    <div class="mobile-menu__cta"><a class="btn btn--dark" href="#waitlist">Join the waitlist</a>
+      <a class="btn btn--outline" href="login.html" style="margin-top:8px">Log in</a></div>
+  </div>
+</header>
+
+<main id="top">
+
+<!-- ───────────────────────── HERO ───────────────────────── -->
+<section class="hero hero--full">
+  <div class="hero__sky hero__sky--light hero__sky--stars">
+  <div class="container hero__inner hero__split hero__split--demo">
+    <div class="hero__copy">
+    <a class="pill" href="#waitlist"><span class="pill__tag">50 creators</span> already swapped their link list for a tapkit <svg viewBox="0 0 12 12" width="11" height="11"><path d="M4 2.5L7.5 6 4 9.5" stroke="currentColor" stroke-width="1.7" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+    <!-- the last word cycles (script.js); screen readers get the whole list from aria-label -->
+    <h1 class="hero__title" aria-label="Stop sending links. Send your work, music, videos, art, menu, podcast or portfolio."><span class="t-line" aria-hidden="true">Stop sending links.</span> <span class="t-line" aria-hidden="true">Send your <span class="rot-wrap"><span class="rot-sizer" aria-hidden="true">portfolio.</span><span class="rot-live"><span class="rot" id="heroRot" data-words="work,music,videos,art,menu,podcast,portfolio">work</span>.</span></span></span></h1>
+    <p class="hero__sub">One page that shows what you make and takes payments. When someone comments, SuperDM sends them straight to it.</p>
+
+    <!-- claim your page: the name goes into the waitlist dialog (script.js) -->
+    <form class="claim2" id="heroClaim" novalidate>
+      <label class="claim2__box" for="heroAlias"><span class="claim2__pre">tapkit.in/</span><input id="heroAlias" type="text" autocomplete="off" autocapitalize="off" spellcheck="false" maxlength="30" placeholder="yourname" aria-label="The name you want after tapkit.in/" /></label>
+      <button class="claim2__btn" type="submit">Get your tapkit <span aria-hidden="true">→</span></button>
+    </form>
+    <small class="err heroform__err" id="errClaim"></small>
+    <p class="claim2__fine">Free forever · No card needed · No code · <a href="#demo" id="seeExamples">See examples</a></p>
+
+    </div>
+
+    <!-- Live demo: data-app is where the tapkit server runs. The demo creators come from
+         tapkit-app/server/scripts/seed-demo.js — change this to the live domain on upload. -->
+    <div class="tabs hero-demo" id="demo" data-app="http://localhost:4500">
+      <div class="tabs__bar" role="tablist" aria-label="Demo">
+        <button class="tabs__btn is-active" type="button" role="tab" aria-selected="true" data-demo-tab="page">Bio page</button>
+        <button class="tabs__btn" type="button" role="tab" aria-selected="false" data-demo-tab="dm">SuperDM</button>
+        <button class="tabs__btn" type="button" role="tab" aria-selected="false" data-demo-tab="product">Products</button>
+      </div>
+
+      <!-- Bio page: the real page in the phone -->
+      <div class="demo__panel" data-demo-panel="page" role="tabpanel">
+        <div class="phone demo__phone">
+          <div class="phone__screen">
+            <div class="phone__status"><span>9:41</span><span class="phone__island"></span><span class="phone__sig">▮▮▮ ◔</span></div>
+            <div class="phone__url" id="demoPageUrl">tapkit.in/meera.fit</div>
+            <div class="demo__frame"><iframe id="demoPageFrame" title="A live tapkit bio page"></iframe></div>
+            <div class="demo-offline" hidden><b>The live demo is offline</b><p>Start the tapkit server, then try again.</p><button class="btn btn--dark" type="button" data-demo-retry>Try again</button></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- SuperDM: a reel or story, and the DM it sends -->
+      <div class="demo__panel" data-demo-panel="dm" role="tabpanel" hidden>
+        <div class="phone demo__phone">
+          <div class="phone__screen">
+            <div class="phone__status"><span>9:41</span><span class="phone__island"></span><span class="phone__sig">▮▮▮ ◔</span></div>
+            <!-- the reel, laid out like Instagram Reels (icons drawn here, no Instagram artwork) -->
+            <div class="ig reel" data-dm-view="post">
+              <div class="reel__media" aria-hidden="true"><i class="reel__bar"><i></i></i></div>
+              <div class="reel__top" aria-hidden="true"><b>Reels</b><svg viewBox="0 0 24 24"><path d="M4 8.5A2.5 2.5 0 0 1 6.5 6h1.4l1.2-1.8c.2-.3.6-.5 1-.5h3.8c.4 0 .8.2 1 .5L16.1 6h1.4A2.5 2.5 0 0 1 20 8.5v8A2.5 2.5 0 0 1 17.5 19h-11A2.5 2.5 0 0 1 4 16.5v-8Z"/><circle cx="12" cy="12.5" r="3.4"/></svg></div>
+              <div class="reel__rail">
+                <button class="reel__act" type="button" aria-label="Like" aria-pressed="false" id="reelLike"><svg viewBox="0 0 24 24"><path d="M12 20s-7.5-4.6-7.5-10.2A4.3 4.3 0 0 1 12 7.3a4.3 4.3 0 0 1 7.5 2.5C19.5 15.4 12 20 12 20Z"/></svg><span>12.4K</span></button>
+                <button class="reel__act" type="button" aria-label="Comments" id="reelComments"><svg viewBox="0 0 24 24"><path d="M20 11.5a8 8 0 0 1-11.8 7l-4.2 1 1.1-3.9A8 8 0 1 1 20 11.5Z"/></svg><span id="reelCount">218</span></button>
+                <button class="reel__act" type="button" aria-label="Share"><svg viewBox="0 0 24 24"><path d="M21 3 10.2 13.8M21 3l-6.5 18-4.3-7.2L3 9.5 21 3Z"/></svg><span>1,032</span></button>
+                <button class="reel__act" type="button" aria-label="More"><svg viewBox="0 0 24 24"><circle cx="5" cy="12" r="1.2"/><circle cx="12" cy="12" r="1.2"/><circle cx="19" cy="12" r="1.2"/></svg></button>
+                <span class="reel__audio" aria-hidden="true">A</span>
+              </div>
+              <div class="reel__info">
+                <div class="reel__who"><span class="reel__ava">A</span><b>ananya.glows</b><span class="reel__follow">Follow</span></div>
+                <p class="reel__cap">Comment <b>ROUTINE</b> and I'll DM you the full guide 💜</p>
+                <p class="reel__music"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 18V5l11-2v13M9 18a3 3 0 1 1-3-3 3 3 0 0 1 3 3Zm11-2a3 3 0 1 1-3-3 3 3 0 0 1 3 3Z"/></svg> ananya.glows · Original audio</p>
+              </div>
+              <button class="reel__ask" type="button" id="reelAsk">Add a comment…</button>
+              <!-- comments open from the bottom, like the app -->
+              <div class="reel__sheet" id="reelSheet" hidden>
+                <button class="reel__grab" type="button" id="reelClose" aria-label="Close comments"><i></i></button>
+                <b class="reel__sheet-t">Comments</b>
+                <ul class="ig__comments" id="demoComments" aria-live="polite">
+                  <li class="igc"><span class="igc__ava" style="--a:#7c6dbb">R</span><div><b>riya.k</b> <i>2h</i><p>this is so good 😭</p><small>Reply</small></div></li>
+                  <li class="igc"><span class="igc__ava" style="--a:#d17a52">N</span><div><b>nehaa.s</b> <i>1h</i><p>need this routine asap</p><small>Reply</small></div></li>
+                </ul>
+                <form class="ig__compose" id="demoComment">
+                  <span class="igc__ava" style="--a:#3b82f6">Y</span>
+                  <label class="sr-only" for="demoCommentInput">Your comment</label>
+                  <input id="demoCommentInput" type="text" autocomplete="off" maxlength="120" placeholder="Add a comment for ananya.glows…" />
+                  <button type="submit">Post</button>
+                </form>
+              </div>
+            </div>
+            <div class="ig ig--story" data-dm-view="story" hidden>
+              <div class="ig__bars"><i></i></div>
+              <div class="ig__head"><span class="ava" style="--a:#E8A317">A</span><b>ananya.glows</b><i>2h</i></div>
+              <div class="ig__storytext">Reply <b>SHOP</b> for everything I use 🛍️</div>
+            </div>
+            <!-- the DM it sends, laid out like an Instagram chat (icons drawn here) -->
+            <div class="ig ig--dm" data-dm-view="dm" hidden>
+              <div class="dmhead"><button class="dmhead__back" type="button" id="demoBack" aria-label="Back">‹</button><span class="ava" style="--a:#E8A317">A</span><div><b>ananya.glows</b><i id="demoDmSub">Ananya Rao</i></div>
+                <span class="dmhead__icons" aria-hidden="true"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 4h3l2 5-2.5 1.5a11 11 0 0 0 6 6L15 14l5 2v3a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2Z"/></svg><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 7.5A1.5 1.5 0 0 1 4.5 6h10A1.5 1.5 0 0 1 16 7.5v9a1.5 1.5 0 0 1-1.5 1.5h-10A1.5 1.5 0 0 1 3 16.5v-9ZM16 10.5l5-3v9l-5-3"/></svg></span></div>
+              <div class="dm" id="demoThread" aria-live="polite"></div>
+              <div class="dmbar" aria-hidden="true"><span class="dmbar__cam"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 8.5A2.5 2.5 0 0 1 6.5 6h1.4l1.2-1.8c.2-.3.6-.5 1-.5h3.8c.4 0 .8.2 1 .5L16.1 6h1.4A2.5 2.5 0 0 1 20 8.5v8A2.5 2.5 0 0 1 17.5 19h-11A2.5 2.5 0 0 1 4 16.5v-8ZM12 15.9a3.4 3.4 0 1 0 0-6.8 3.4 3.4 0 0 0 0 6.8Z"/></svg></span><span class="dmbar__ph">Message…</span><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3a3 3 0 0 0-3 3v6a3 3 0 0 0 6 0V6a3 3 0 0 0-3-3ZM5 11a7 7 0 0 0 14 0M12 18v3"/></svg><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 5h16v14H4zM4 15l4.5-4.5L13 15l3-3 4 4M15 9.5a1 1 0 1 0 0-.01"/></svg><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21a9 9 0 1 1 9-9c0 5-4 9-9 9ZM8.5 14.5s1.3 1.8 3.5 1.8 3.5-1.8 3.5-1.8M9 9.5h.01M15 9.5h.01"/></svg></div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Products: the real checkout page in the phone -->
+      <div class="demo__panel" data-demo-panel="product" role="tabpanel" hidden>
+        <div class="phone demo__phone">
+          <div class="phone__screen">
+            <div class="phone__status"><span>9:41</span><span class="phone__island"></span><span class="phone__sig">▮▮▮ ◔</span></div>
+            <div class="phone__url" id="demoProductUrl">tapkit.in/ananya.glows/p/pm-routine</div>
+            <div class="demo__frame"><iframe id="demoProductFrame" title="A live tapkit product page"></iframe></div>
+            <div class="demo-offline" hidden><b>The live demo is offline</b><p>Start the tapkit server, then try again.</p><button class="btn btn--dark" type="button" data-demo-retry>Try again</button></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  </div>
+</section>
+
+<!-- ───────────────────────── WORKS WITH ─────────────────────────
+     Only apps a tapkit page works with today: social links, music and video embeds, email, and paying through Razorpay (UPI apps).
+     Logos: Simple Icons (simpleicons.org, CC0), drawn inline in each brand colour. -->
+<section class="works" aria-labelledby="worksT">
+  <div class="container">
+    <p class="works__t" id="worksT">Works with the apps you already use</p>
+    <ul class="works__row">
+      <li title="Instagram"><svg viewBox="0 0 24 24" role="img" aria-label="Instagram"><path fill="#FF0069" d="M7.0301.084c-1.2768.0602-2.1487.264-2.911.5634-.7888.3075-1.4575.72-2.1228 1.3877-.6652.6677-1.075 1.3368-1.3802 2.127-.2954.7638-.4956 1.6365-.552 2.914-.0564 1.2775-.0689 1.6882-.0626 4.947.0062 3.2586.0206 3.6671.0825 4.9473.061 1.2765.264 2.1482.5635 2.9107.308.7889.72 1.4573 1.388 2.1228.6679.6655 1.3365 1.0743 2.1285 1.38.7632.295 1.6361.4961 2.9134.552 1.2773.056 1.6884.069 4.9462.0627 3.2578-.0062 3.668-.0207 4.9478-.0814 1.28-.0607 2.147-.2652 2.9098-.5633.7889-.3086 1.4578-.72 2.1228-1.3881.665-.6682 1.0745-1.3378 1.3795-2.1284.2957-.7632.4966-1.636.552-2.9124.056-1.2809.0692-1.6898.063-4.948-.0063-3.2583-.021-3.6668-.0817-4.9465-.0607-1.2797-.264-2.1487-.5633-2.9117-.3084-.7889-.72-1.4568-1.3876-2.1228C21.2982 1.33 20.628.9208 19.8378.6165 19.074.321 18.2017.1197 16.9244.0645 15.6471.0093 15.236-.005 11.977.0014 8.718.0076 8.31.0215 7.0301.0839m.1402 21.6932c-1.17-.0509-1.8053-.2453-2.2287-.408-.5606-.216-.96-.4771-1.3819-.895-.422-.4178-.6811-.8186-.9-1.378-.1644-.4234-.3624-1.058-.4171-2.228-.0595-1.2645-.072-1.6442-.079-4.848-.007-3.2037.0053-3.583.0607-4.848.05-1.169.2456-1.805.408-2.2282.216-.5613.4762-.96.895-1.3816.4188-.4217.8184-.6814 1.3783-.9003.423-.1651 1.0575-.3614 2.227-.4171 1.2655-.06 1.6447-.072 4.848-.079 3.2033-.007 3.5835.005 4.8495.0608 1.169.0508 1.8053.2445 2.228.408.5608.216.96.4754 1.3816.895.4217.4194.6816.8176.9005 1.3787.1653.4217.3617 1.056.4169 2.2263.0602 1.2655.0739 1.645.0796 4.848.0058 3.203-.0055 3.5834-.061 4.848-.051 1.17-.245 1.8055-.408 2.2294-.216.5604-.4763.96-.8954 1.3814-.419.4215-.8181.6811-1.3783.9-.4224.1649-1.0577.3617-2.2262.4174-1.2656.0595-1.6448.072-4.8493.079-3.2045.007-3.5825-.006-4.848-.0608M16.953 5.5864A1.44 1.44 0 1 0 18.39 4.144a1.44 1.44 0 0 0-1.437 1.4424M5.8385 12.012c.0067 3.4032 2.7706 6.1557 6.173 6.1493 3.4026-.0065 6.157-2.7701 6.1506-6.1733-.0065-3.4032-2.771-6.1565-6.174-6.1498-3.403.0067-6.156 2.771-6.1496 6.1738M8 12.0077a4 4 0 1 1 4.008 3.9921A3.9996 3.9996 0 0 1 8 12.0077"/></svg></li>
+      <li title="YouTube"><svg viewBox="0 0 24 24" role="img" aria-label="YouTube"><path fill="#FF0000" d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg></li>
+      <li title="WhatsApp"><svg viewBox="0 0 24 24" role="img" aria-label="WhatsApp"><path fill="#25D366" d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg></li>
+      <li title="Spotify"><svg viewBox="0 0 24 24" role="img" aria-label="Spotify"><path fill="#1ED760" d="M12 0C5.4 0 0 5.4 0 12s5.4 12 12 12 12-5.4 12-12S18.66 0 12 0zm5.521 17.34c-.24.359-.66.48-1.021.24-2.82-1.74-6.36-2.101-10.561-1.141-.418.122-.779-.179-.899-.539-.12-.421.18-.78.54-.9 4.56-1.021 8.52-.6 11.64 1.32.42.18.479.659.301 1.02zm1.44-3.3c-.301.42-.841.6-1.262.3-3.239-1.98-8.159-2.58-11.939-1.38-.479.12-1.02-.12-1.14-.6-.12-.48.12-1.021.6-1.141C9.6 9.9 15 10.561 18.72 12.84c.361.181.54.78.241 1.2zm.12-3.36C15.24 8.4 8.82 8.16 5.16 9.301c-.6.179-1.2-.181-1.38-.721-.18-.601.18-1.2.72-1.381 4.26-1.26 11.28-1.02 15.721 1.621.539.3.719 1.02.419 1.56-.299.421-1.02.599-1.559.3z"/></svg></li>
+      <li title="X"><svg viewBox="0 0 24 24" role="img" aria-label="X"><path fill="#000000" d="M18.901 1.153h3.68l-8.04 9.19L24 22.846h-7.406l-5.8-7.584-6.638 7.584H.474l8.6-9.83L0 1.154h7.594l5.243 6.932ZM17.61 20.644h2.039L6.486 3.24H4.298Z"/></svg></li>
+      <li title="Threads"><svg viewBox="0 0 24 24" role="img" aria-label="Threads"><path fill="#000000" d="M12.186 24h-.007c-3.581-.024-6.334-1.205-8.184-3.509C2.35 18.44 1.5 15.586 1.472 12.01v-.017c.03-3.579.879-6.43 2.525-8.482C5.845 1.205 8.6.024 12.18 0h.014c2.746.02 5.043.725 6.826 2.098 1.677 1.29 2.858 3.13 3.509 5.467l-2.04.569c-1.104-3.96-3.898-5.984-8.304-6.015-2.91.022-5.11.936-6.54 2.717C4.307 6.504 3.616 8.914 3.589 12c.027 3.086.718 5.496 2.057 7.164 1.43 1.783 3.631 2.698 6.54 2.717 2.623-.02 4.358-.631 5.8-2.045 1.647-1.613 1.618-3.593 1.09-4.798-.31-.71-.873-1.3-1.634-1.75-.192 1.352-.622 2.446-1.284 3.272-.886 1.102-2.14 1.704-3.73 1.79-1.202.065-2.361-.218-3.259-.801-1.063-.689-1.685-1.74-1.752-2.964-.065-1.19.408-2.285 1.33-3.082.88-.76 2.119-1.207 3.583-1.291a13.853 13.853 0 0 1 3.02.142c-.126-.742-.375-1.332-.75-1.757-.513-.586-1.308-.883-2.359-.89h-.029c-.844 0-1.992.232-2.721 1.32L7.734 7.847c.98-1.454 2.568-2.256 4.478-2.256h.044c3.194.02 5.097 1.975 5.287 5.388.108.046.216.094.321.142 1.49.7 2.58 1.761 3.154 3.07.797 1.82.871 4.79-1.548 7.158-1.85 1.81-4.094 2.628-7.277 2.65Zm1.003-11.69c-.242 0-.487.007-.739.021-1.836.103-2.98.946-2.916 2.143.067 1.256 1.452 1.839 2.784 1.767 1.224-.065 2.818-.543 3.086-3.71a10.5 10.5 0 0 0-2.215-.221z"/></svg></li>
+      <li title="Facebook"><svg viewBox="0 0 24 24" role="img" aria-label="Facebook"><path fill="#0866FF" d="M9.101 23.691v-7.98H6.627v-3.667h2.474v-1.58c0-4.085 1.848-5.978 5.858-5.978.401 0 .955.042 1.468.103a8.68 8.68 0 0 1 1.141.195v3.325a8.623 8.623 0 0 0-.653-.036 26.805 26.805 0 0 0-.733-.009c-.707 0-1.259.096-1.675.309a1.686 1.686 0 0 0-.679.622c-.258.42-.374.995-.374 1.752v1.297h3.919l-.386 2.103-.287 1.564h-3.246v8.245C19.396 23.238 24 18.179 24 12.044c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.628 3.874 10.35 9.101 11.647Z"/></svg></li>
+      <li title="LinkedIn"><svg viewBox="0 0 24 24" role="img" aria-label="LinkedIn"><path fill="#0A66C2" d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg></li>
+      <li title="Telegram"><svg viewBox="0 0 24 24" role="img" aria-label="Telegram"><path fill="#26A5E4" d="M11.944 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0a12 12 0 0 0-.056 0zm4.962 7.224c.1-.002.321.023.465.14a.506.506 0 0 1 .171.325c.016.093.036.306.02.472-.18 1.898-.962 6.502-1.36 8.627-.168.9-.499 1.201-.82 1.23-.696.065-1.225-.46-1.9-.902-1.056-.693-1.653-1.124-2.678-1.8-1.185-.78-.417-1.21.258-1.91.177-.184 3.247-2.977 3.307-3.23.007-.032.014-.15-.056-.212s-.174-.041-.249-.024c-.106.024-1.793 1.14-5.061 3.345-.48.33-.913.49-1.302.48-.428-.008-1.252-.241-1.865-.44-.752-.245-1.349-.374-1.297-.789.027-.216.325-.437.893-.663 3.498-1.524 5.83-2.529 6.998-3.014 3.332-1.386 4.025-1.627 4.476-1.635z"/></svg></li>
+      <li title="SoundCloud"><svg viewBox="0 0 24 24" role="img" aria-label="SoundCloud"><path fill="#FF5500" d="M23.999 14.165c-.052 1.796-1.612 3.169-3.4 3.169h-8.18a.68.68 0 0 1-.675-.683V7.862a.747.747 0 0 1 .452-.724s.75-.513 2.333-.513a5.364 5.364 0 0 1 2.763.755 5.433 5.433 0 0 1 2.57 3.54c.282-.08.574-.121.868-.12.884 0 1.73.358 2.347.992s.948 1.49.922 2.373ZM10.721 8.421c.247 2.98.427 5.697 0 8.672a.264.264 0 0 1-.53 0c-.395-2.946-.22-5.718 0-8.672a.264.264 0 0 1 .53 0ZM9.072 9.448c.285 2.659.37 4.986-.006 7.655a.277.277 0 0 1-.55 0c-.331-2.63-.256-5.02 0-7.655a.277.277 0 0 1 .556 0Zm-1.663-.257c.27 2.726.39 5.171 0 7.904a.266.266 0 0 1-.532 0c-.38-2.69-.257-5.21 0-7.904a.266.266 0 0 1 .532 0Zm-1.647.77a26.108 26.108 0 0 1-.008 7.147.272.272 0 0 1-.542 0 27.955 27.955 0 0 1 0-7.147.275.275 0 0 1 .55 0Zm-1.67 1.769c.421 1.865.228 3.5-.029 5.388a.257.257 0 0 1-.514 0c-.21-1.858-.398-3.549 0-5.389a.272.272 0 0 1 .543 0Zm-1.655-.273c.388 1.897.26 3.508-.01 5.412-.026.28-.514.283-.54 0-.244-1.878-.347-3.54-.01-5.412a.283.283 0 0 1 .56 0Zm-1.668.911c.4 1.268.257 2.292-.026 3.572a.257.257 0 0 1-.514 0c-.241-1.262-.354-2.312-.023-3.572a.283.283 0 0 1 .563 0Z"/></svg></li>
+      <li title="Apple Music"><svg viewBox="0 0 24 24" role="img" aria-label="Apple Music"><path fill="#FA243C" d="M23.994 6.124a9.23 9.23 0 00-.24-2.19c-.317-1.31-1.062-2.31-2.18-3.043a5.022 5.022 0 00-1.877-.726 10.496 10.496 0 00-1.564-.15c-.04-.003-.083-.01-.124-.013H5.986c-.152.01-.303.017-.455.026-.747.043-1.49.123-2.193.4-1.336.53-2.3 1.452-2.865 2.78-.192.448-.292.925-.363 1.408-.056.392-.088.785-.1 1.18 0 .032-.007.062-.01.093v12.223c.01.14.017.283.027.424.05.815.154 1.624.497 2.373.65 1.42 1.738 2.353 3.234 2.801.42.127.856.187 1.293.228.555.053 1.11.06 1.667.06h11.03a12.5 12.5 0 001.57-.1c.822-.106 1.596-.35 2.295-.81a5.046 5.046 0 001.88-2.207c.186-.42.293-.87.37-1.324.113-.675.138-1.358.137-2.04-.002-3.8 0-7.595-.003-11.393zm-6.423 3.99v5.712c0 .417-.058.827-.244 1.206-.29.59-.76.962-1.388 1.14-.35.1-.706.157-1.07.173-.95.045-1.773-.6-1.943-1.536a1.88 1.88 0 011.038-2.022c.323-.16.67-.25 1.018-.324.378-.082.758-.153 1.134-.24.274-.063.457-.23.51-.516a.904.904 0 00.02-.193c0-1.815 0-3.63-.002-5.443a.725.725 0 00-.026-.185c-.04-.15-.15-.243-.304-.234-.16.01-.318.035-.475.066-.76.15-1.52.303-2.28.456l-2.325.47-1.374.278c-.016.003-.032.01-.048.013-.277.077-.377.203-.39.49-.002.042 0 .086 0 .13-.002 2.602 0 5.204-.003 7.805 0 .42-.047.836-.215 1.227-.278.64-.77 1.04-1.434 1.233-.35.1-.71.16-1.075.172-.96.036-1.755-.6-1.92-1.544-.14-.812.23-1.685 1.154-2.075.357-.15.73-.232 1.108-.31.287-.06.575-.116.86-.177.383-.083.583-.323.6-.714v-.15c0-2.96 0-5.922.002-8.882 0-.123.013-.25.042-.37.07-.285.273-.448.546-.518.255-.066.515-.112.774-.165.733-.15 1.466-.296 2.2-.444l2.27-.46c.67-.134 1.34-.27 2.01-.403.22-.043.442-.088.663-.106.31-.025.523.17.554.482.008.073.012.148.012.223.002 1.91.002 3.822 0 5.732z"/></svg></li>
+      <li title="YouTube Music"><svg viewBox="0 0 24 24" role="img" aria-label="YouTube Music"><path fill="#FF0000" d="M12 0C5.376 0 0 5.376 0 12s5.376 12 12 12 12-5.376 12-12S18.624 0 12 0zm0 19.104c-3.924 0-7.104-3.18-7.104-7.104S8.076 4.896 12 4.896s7.104 3.18 7.104 7.104-3.18 7.104-7.104 7.104zm0-13.332c-3.432 0-6.228 2.796-6.228 6.228S8.568 18.228 12 18.228s6.228-2.796 6.228-6.228S15.432 5.772 12 5.772zM9.684 15.54V8.46L15.816 12l-6.132 3.54z"/></svg></li>
+      <li title="Vimeo"><svg viewBox="0 0 24 24" role="img" aria-label="Vimeo"><path fill="#1AB7EA" d="M23.9765 6.4168c-.105 2.338-1.739 5.5429-4.894 9.6088-3.2679 4.247-6.0258 6.3699-8.2898 6.3699-1.409 0-2.578-1.294-3.553-3.881l-1.9179-7.1138c-.719-2.584-1.488-3.878-2.312-3.878-.179 0-.806.378-1.8809 1.132l-1.129-1.457a315.06 315.06 0 003.501-3.1279c1.579-1.368 2.765-2.085 3.5539-2.159 1.867-.18 3.016 1.1 3.447 3.838.465 2.953.789 4.789.971 5.5069.5389 2.45 1.1309 3.674 1.7759 3.674.502 0 1.256-.796 2.265-2.385 1.004-1.589 1.54-2.797 1.612-3.628.144-1.371-.395-2.061-1.614-2.061-.574 0-1.167.121-1.777.391 1.186-3.8679 3.434-5.7568 6.7619-5.6368 2.4729.06 3.6279 1.664 3.4929 4.7969z"/></svg></li>
+      <li title="Gmail"><svg viewBox="0 0 24 24" role="img" aria-label="Gmail"><path fill="#EA4335" d="M24 5.457v13.909c0 .904-.732 1.636-1.636 1.636h-3.819V11.73L12 16.64l-6.545-4.91v9.273H1.636A1.636 1.636 0 0 1 0 19.366V5.457c0-2.023 2.309-3.178 3.927-1.964L5.455 4.64 12 9.548l6.545-4.91 1.528-1.145C21.69 2.28 24 3.434 24 5.457z"/></svg></li>
+      <li title="Razorpay"><svg viewBox="0 0 24 24" role="img" aria-label="Razorpay"><path fill="#0C2451" d="M22.436 0l-11.91 7.773-1.174 4.276 6.625-4.297L11.65 24h4.391l6.395-24zM14.26 10.098L3.389 17.166 1.564 24h9.008l3.688-13.902Z"/></svg></li>
+      <li title="Google Pay"><svg viewBox="0 0 24 24" role="img" aria-label="Google Pay"><path fill="#4285F4" d="M3.963 7.235A3.963 3.963 0 00.422 9.419a3.963 3.963 0 000 3.559 3.963 3.963 0 003.541 2.184c1.07 0 1.97-.352 2.627-.957.748-.69 1.18-1.71 1.18-2.916a4.722 4.722 0 00-.07-.806H3.964v1.526h2.14a1.835 1.835 0 01-.79 1.205c-.356.241-.814.379-1.35.379-1.034 0-1.911-.697-2.225-1.636a2.375 2.375 0 010-1.517c.314-.94 1.191-1.636 2.225-1.636a2.152 2.152 0 011.52.594l1.132-1.13a3.808 3.808 0 00-2.652-1.033zm6.501.55v6.9h.886V11.89h1.465c.603 0 1.11-.196 1.522-.588a1.911 1.911 0 00.635-1.464 1.92 1.92 0 00-.635-1.456 2.125 2.125 0 00-1.522-.598zm2.427.85a1.156 1.156 0 01.823.365 1.176 1.176 0 010 1.686 1.171 1.171 0 01-.877.357H11.35V8.635h1.487a1.156 1.156 0 01.054 0zm4.124 1.175c-.842 0-1.477.308-1.907.925l.781.491c.288-.417.68-.626 1.175-.626a1.255 1.255 0 01.856.323 1.009 1.009 0 01.366.785v.202c-.34-.193-.774-.289-1.3-.289-.617 0-1.11.145-1.479.434-.37.288-.554.677-.554 1.165a1.476 1.476 0 00.525 1.156c.35.308.785.463 1.305.463.61 0 1.098-.27 1.465-.81h.038v.655h.848v-2.909c0-.61-.19-1.09-.568-1.44-.38-.35-.896-.525-1.551-.525zm2.263.154l1.946 4.422-1.098 2.38h.915L24 9.963h-.965l-1.368 3.391h-.02l-1.406-3.39zm-2.146 2.368c.494 0 .88.11 1.156.33 0 .372-.147.696-.44.973a1.413 1.413 0 01-.997.414 1.081 1.081 0 01-.69-.232.708.708 0 01-.293-.578c0-.257.12-.47.363-.647.24-.173.54-.26.9-.26Z"/></svg></li>
+      <li title="PhonePe"><svg viewBox="0 0 24 24" role="img" aria-label="PhonePe"><path fill="#5F259F" d="M10.206 9.941h2.949v4.692c-.402.201-.938.268-1.34.268-1.072 0-1.609-.536-1.609-1.743V9.941zm13.47 4.816c-1.523 6.449-7.985 10.442-14.433 8.919C2.794 22.154-1.199 15.691.324 9.243 1.847 2.794 8.309-1.199 14.757.324c6.449 1.523 10.442 7.985 8.919 14.433zm-6.231-5.888a.887.887 0 0 0-.871-.871h-1.609l-3.686-4.222c-.335-.402-.871-.536-1.407-.402l-1.274.401c-.201.067-.268.335-.134.469l4.021 3.82H6.386c-.201 0-.335.134-.335.335v.67c0 .469.402.871.871.871h.938v3.217c0 2.413 1.273 3.82 3.418 3.82.67 0 1.206-.067 1.877-.335v2.145c0 .603.469 1.072 1.072 1.072h.938a.432.432 0 0 0 .402-.402V9.874h1.542c.201 0 .335-.134.335-.335v-.67z"/></svg></li>
+      <li title="Paytm"><svg viewBox="0 0 24 24" role="img" aria-label="Paytm"><path fill="#20336B" d="M15.85 8.167a.204.204 0 0 0-.04.004c-.68.19-.543 1.148-1.781 1.23h-.12a.23.23 0 0 0-.052.005h-.001a.24.24 0 0 0-.184.235v1.09c0 .134.106.241.237.241h.645v4.623c0 .132.104.238.233.238h1.058a.236.236 0 0 0 .233-.238v-4.623h.6c.13 0 .236-.107.236-.241v-1.09a.239.239 0 0 0-.236-.24h-.612V8.386a.218.218 0 0 0-.216-.22zm4.225 1.17c-.398 0-.762.15-1.042.395v-.124a.238.238 0 0 0-.234-.224h-1.07a.24.24 0 0 0-.236.242v5.92a.24.24 0 0 0 .236.242h1.07c.12 0 .217-.091.233-.209v-4.25a.393.393 0 0 1 .371-.408h.196a.41.41 0 0 1 .226.09.405.405 0 0 1 .145.319v4.074l.004.155a.24.24 0 0 0 .237.241h1.07a.239.239 0 0 0 .235-.23l-.001-4.246c0-.14.062-.266.174-.34a.419.419 0 0 1 .196-.068h.198c.23.02.37.2.37.408.005 1.396.004 2.8.004 4.224a.24.24 0 0 0 .237.241h1.07c.13 0 .236-.108.236-.241v-4.543c0-.31-.034-.442-.08-.577a1.601 1.601 0 0 0-1.51-1.09h-.015a1.58 1.58 0 0 0-1.152.5c-.291-.308-.7-.5-1.153-.5zM.232 9.4A.234.234 0 0 0 0 9.636v5.924c0 .132.096.238.216.241h1.09c.13 0 .237-.107.237-.24l.004-1.658H2.57c.857 0 1.453-.605 1.453-1.481v-1.538c0-.877-.596-1.484-1.453-1.484H.232zm9.032 0a.239.239 0 0 0-.237.241v2.47c0 .94.657 1.608 1.579 1.608h.675s.016 0 .037.004a.253.253 0 0 1 .222.253c0 .13-.096.235-.219.251l-.018.004-.303.006H9.739a.239.239 0 0 0-.236.24v1.09a.24.24 0 0 0 .236.242h1.75c.92 0 1.577-.669 1.577-1.608v-4.56a.239.239 0 0 0-.236-.24h-1.07a.239.239 0 0 0-.236.24c-.005.787 0 1.525 0 2.255a.253.253 0 0 1-.25.25h-.449a.253.253 0 0 1-.25-.255c.005-.754-.005-1.5-.005-2.25a.239.239 0 0 0-.236-.24zm-4.004.006a.232.232 0 0 0-.238.226v1.023c0 .132.113.24.252.24h1.413c.112.017.2.1.213.23v.14c-.013.124-.1.214-.207.224h-.7c-.93 0-1.594.63-1.594 1.515v1.269c0 .88.57 1.506 1.495 1.506h1.94c.348 0 .63-.27.63-.6v-4.136c0-1.004-.508-1.637-1.72-1.637zm-3.713 1.572h.678c.139 0 .25.115.25.256v.836a.253.253 0 0 1-.25.256h-.1c-.192.002-.386 0-.578 0zm4.67 1.977h.445c.139 0 .252.108.252.24v.932a.23.23 0 0 1-.014.076.25.25 0 0 1-.238.164h-.445a.247.247 0 0 1-.252-.24v-.933c0-.132.113-.239.252-.239Z"/></svg></li>
+    </ul>
+  </div>
+</section>
+
+<!-- ───────────────────────── LAYOUTS ─────────────────────────
+     Live, look-only previews (?embed=1&nonav=1) of the demo creators from tapkit-app/server/scripts/seed-demo.js;
+     the pages load from the server in #demo's data-app (demo.js). -->
+<section class="section layouts" id="layouts">
+  <div class="container">
+    <div class="section__head">
+      <h2>One page, your look</h2>
+      <p>Start from a layout made for what you do, then change anything. These are real tapkit pages.</p>
+    </div>
+    <div class="layouts__row">
+      <figure class="lay"><div class="lay__frame"><iframe data-lay="/daniel.models" title="Spotlight layout: a live tapkit page" loading="lazy" tabindex="-1"></iframe><button class="lay__open" type="button" data-open="/daniel.models" data-name="Spotlight" aria-label="Open the Spotlight layout"></button></div>
+        <figcaption><b>Spotlight</b><i>Fashion model</i></figcaption></figure>
+      <figure class="lay"><div class="lay__frame"><iframe data-lay="/rohan.studio" title="Folio layout: a live tapkit page" loading="lazy" tabindex="-1"></iframe><button class="lay__open" type="button" data-open="/rohan.studio" data-name="Folio" aria-label="Open the Folio layout"></button></div>
+        <figcaption><b>Folio</b><i>Product designer</i></figcaption></figure>
+      <figure class="lay"><div class="lay__frame"><iframe data-lay="/meera.fit" title="Frost layout: a live tapkit page" loading="lazy" tabindex="-1"></iframe><button class="lay__open" type="button" data-open="/meera.fit" data-name="Frost" aria-label="Open the Frost layout"></button></div>
+        <figcaption><b>Frost</b><i>Yoga trainer</i></figcaption></figure>
+      <figure class="lay lay--still"><div class="lay__frame"><iframe data-lay="/tara.frames" title="Noir layout: a live tapkit page" loading="lazy" tabindex="-1"></iframe><button class="lay__open" type="button" data-open="/tara.frames" data-name="Noir" aria-label="Open the Noir layout"></button></div>
+        <figcaption><b>Noir</b><i>Photographer</i></figcaption></figure>
+      <figure class="lay"><div class="lay__frame"><iframe data-lay="/kabir.beats" title="Synthwave layout: a live tapkit page" loading="lazy" tabindex="-1"></iframe><button class="lay__open" type="button" data-open="/kabir.beats" data-name="Synthwave" aria-label="Open the Synthwave layout"></button></div>
+        <figcaption><b>Synthwave</b><i>Music producer</i></figcaption></figure>
+    </div>
+    <div class="layouts__more"><a class="btn btn--lg layouts__cta" href="bio-page.html">See more templates <span aria-hidden="true">→</span></a></div>
+  </div>
+</section>
+
+<!-- ───────────────────────── FOUR TOOLS ───────────────────────── -->
+<section class="section section--tint" id="features">
+  <div class="container">
+    <div class="section__head">
+      <h2>Comment → DM → your page → paid</h2>
+      <p>Watch one follower go round the loop, or tap a step.</p>
+    </div>
+
+    <!-- the loop, animated (loop.js): four steps on a line, a dot travels between them, the screen below shows that step -->
+    <div class="loop" id="loop">
+      <ol class="loop__track" role="tablist" aria-label="The tapkit loop">
+        <li><button type="button" role="tab" data-step="0" aria-selected="true"><span class="loop__ic">💬</span><b>Comment</b><i>They comment your word</i></button></li>
+        <li><button type="button" role="tab" data-step="1" aria-selected="false"><span class="loop__ic">📩</span><b>DM</b><i>SuperDM sends your link</i></button></li>
+        <li><button type="button" role="tab" data-step="2" aria-selected="false"><span class="loop__ic">▤</span><b>Your page</b><i>They land on your bio page</i></button></li>
+        <li><button type="button" role="tab" data-step="3" aria-selected="false"><span class="loop__ic">₹</span><b>Paid</b><i>They buy, you earn</i></button></li>
+      </ol>
+      <div class="loop__line" aria-hidden="true"><i class="loop__fill"></i><i class="loop__dot"></i></div>
+      <div class="loop__stage" aria-live="polite">
+        <div class="loop__scene" data-scene="0">
+          <div class="lsc lsc--post"><span class="lsc__media">▶</span><div class="lsc__c"><b>riya.k</b> ROUTINE 🙏</div><div class="lsc__c lsc__c--reply"><b>ananya.glows</b> Sent you a DM 📩</div></div>
+          <p><b>A follower comments your word</b> on a reel, a story or in your DMs. SuperDM is listening, 24/7.</p>
+        </div>
+        <div class="loop__scene" data-scene="1" hidden>
+          <div class="lsc lsc--dm"><div class="lsc__msg">Hey Riya! Here’s my full PM routine 💜</div><div class="lsc__card"><span>📄</span><div><b>My full PM skincare routine</b><i>PDF guide · ₹99</i></div></div><div class="lsc__btn">Get the guide</div></div>
+          <p><b>The DM goes out in under a second</b>, with a button to the exact thing they asked for.</p>
+        </div>
+        <div class="loop__scene" data-scene="2" hidden>
+          <div class="lsc lsc--page"><span class="lsc__av">A</span><b>Ananya</b><i>Skincare for Indian skin</i><div class="lsc__row">Vitamin C serum · ₹599</div><div class="lsc__row lsc__row--hi">📄 PM routine guide · ₹99</div></div>
+          <p><b>They land on your bio page</b>, with your links and everything you sell in one place.</p>
+        </div>
+        <div class="loop__scene" data-scene="3" hidden>
+          <div class="lsc lsc--paid"><span class="lsc__tick">✓</span><b>₹99 received</b><i>Riya bought “My full PM skincare routine”</i><div class="lsc__row">Delivered instantly · UPI</div></div>
+          <p><b>They pay and get it instantly</b>, and the sale shows up in your earnings.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="grid-2 tools">
+      <div class="card feat" id="tool-superdm"><span class="feat__ico">💬</span><b>SuperDM</b><p>Someone comments your word on a post, replies to your story or messages you, and your DM goes out with a button to your link. It can reply under the comment too, ask them to follow first, or ask for their email.</p></div>
+      <div class="card feat" id="tool-page"><span class="feat__ico">▤</span><b>Bio page</b><p>Built step by step: bring in your Instagram profile or start from scratch, pick the sections you want, then a template. Change any of it later in the editor, with a live phone preview.</p></div>
+      <div class="card feat" id="tool-links"><span class="feat__ico">↗</span><b>Links</b><p>Turn any long link into a short one like <u>tapkit.in/l/serum</u> and see how many taps it gets. Add a picture and it shows up as a button on your bio page.</p></div>
+      <div class="card feat" id="tool-products"><span class="feat__ico">🔓</span><b>Products</b><p>Sell a file, like a guide, a preset pack or a template. Lock a message, link or code until someone pays. Or give a freebie away for an email. Set a fixed price, let buyers choose, or make it free.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ───────────────────────── WORKFLOWS ───────────────────────── -->
+<section class="section" id="workflows">
+  <div class="container">
+    <div class="section__head">
+      <h2>Ready-made SuperDM setups for the way you already post</h2>
+      <p>Pick one, change the word and what gets sent, and turn it on. Every workflow starts with someone commenting, replying or messaging you first. Never a cold message.</p>
+    </div>
+    <div class="grid-3 wfgrid">
+      <div class="card wf">
+        <div class="wf__top"><span class="wf__niche">Food</span><span class="wf__plan">Pro</span></div>
+        <b class="wf__title">Sell the full recipe</b>
+        <ol class="wf__steps"><li><span>💬</span>Comment “RECIPE”</li><li><span>📩</span>DM with a button to the recipe</li><li><span>₹</span>Pays ₹49</li><li><span>📄</span>Recipe PDF downloads</li></ol>
+      </div>
+      <div class="card wf">
+        <div class="wf__top"><span class="wf__niche">Beauty</span><span class="wf__plan">Pro</span></div>
+        <b class="wf__title">Send your product links</b>
+        <ol class="wf__steps"><li><span>💬</span>Comment “LINK”</li><li><span>📩</span>DM with your short link</li><li><span>↗</span>Every tap counted</li></ol>
+      </div>
+      <div class="card wf">
+        <div class="wf__top"><span class="wf__niche">Fitness</span><span class="wf__plan">Pro</span></div>
+        <b class="wf__title">Give a free plan, grow your list</b>
+        <ol class="wf__steps"><li><span>💬</span>Comment “PLAN”</li><li><span>👤</span>Asked to follow first</li><li><span>✉️</span>Leaves their email</li><li><span>🎁</span>Free 7-day plan</li></ol>
+      </div>
+      <div class="card wf">
+        <div class="wf__top"><span class="wf__niche">Fashion</span><span class="wf__plan">Pro</span></div>
+        <b class="wf__title">Turn story replies into shoppers</b>
+        <ol class="wf__steps"><li><span>↩</span>Replies “SHOP” to your story</li><li><span>📩</span>DM with your bio page</li><li><span>▤</span>Every pick in one place</li></ol>
+      </div>
+      <div class="card wf">
+        <div class="wf__top"><span class="wf__niche">Education</span><span class="wf__plan">Pro</span></div>
+        <b class="wf__title">Sell your notes and guides</b>
+        <ol class="wf__steps"><li><span>💬</span>Comment “NOTES”</li><li><span>📩</span>DM with a button to the notes</li><li><span>₹</span>Pays ₹99</li><li><span>📄</span>Notes download</li></ol>
+      </div>
+      <div class="card wf">
+        <div class="wf__top"><span class="wf__niche">Photography</span><span class="wf__plan">Pro</span></div>
+        <b class="wf__title">Sell your preset pack</b>
+        <ol class="wf__steps"><li><span>💬</span>Comment “PRESET”</li><li><span>📩</span>DM with a button to the pack</li><li><span>₹</span>Pays what they want, from ₹49</li><li><span>🔓</span>Download link unlocks</li></ol>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ───────────────────────── COMPARE ─────────────────────────
+     tapkit against other link-in-bio tools, one at a time (compare.js holds the facts and the date they were checked) -->
+<section class="section compare" id="compare">
+  <div class="container">
+    <div class="section__head">
+      <h2>How tapkit compares</h2>
+      <p>The things creators ask about most, side by side.</p>
+    </div>
+    <div class="cmp2__tabs" role="tablist" aria-label="Compare tapkit with"></div>
+    <div class="cmp2__card">
+      <table class="cmp2" aria-describedby="cmp2Note">
+        <thead><tr><th scope="col">Feature</th><th scope="col" class="cmp2__us">tapkit</th><th scope="col" id="cmp2Them">—</th></tr></thead>
+        <tbody id="cmp2Body"></tbody>
+      </table>
+    </div>
+    <p class="cmp2__note" id="cmp2Note"></p>
+  </div>
+</section>
+
+<!-- ───────────────────────── SELL WHAT YOU KNOW ───────────────────────── -->
+<section class="section" id="sell">
+  <div class="container">
+    <div class="grid-2 dive">
+      <div>
+        <h2 class="dive__title">Your know-how is worth paying for.</h2>
+        <p class="dive__lead">Your routine. Your recipe. Your presets. Your notes. People already ask for them in the comments. Now they can pay for the full version.</p>
+        <ul class="featurelist">
+          <li><span class="tick">✓</span><div><b>Files</b><p>Guides, e-books, presets and templates, delivered the moment they pay.</p></div></li>
+          <li><span class="tick">✓</span><div><b>Locked content</b><p>A message, a link or a code that only shows after payment.</p></div></li>
+          <li><span class="tick">✓</span><div><b>Freebies that grow your list</b><p>Give something away in exchange for an email.</p></div></li>
+          <li><span class="tick">✓</span><div><b>Your price, your way</b><p>A fixed price with an optional strike-through, pay-what-you-want with a minimum, or free.</p></div></li>
+        </ul>
+      </div>
+      <div class="stack">
+        <div class="card flush series">
+          <div class="series__head">
+            <span class="drop__img" style="--c:#8C6E96">🔓</span>
+            <div><b>@ananya.glows</b><i>3 products on her page</i></div>
+            <span class="series__price">₹4,860</span>
+          </div>
+          <ol class="series__list">
+            <li><span class="series__n">📄</span><div><b>My full PM skincare routine</b><i>PDF guide · 38 sold</i></div><span class="badge badge--ok">₹99</span></li>
+            <li><span class="series__n">🔓</span><div><b>My discount codes</b><i>Locked content · 21 sold</i></div><span class="badge badge--ok">₹49</span></li>
+            <li><span class="series__n">🎁</span><div><b>Skin-type quiz</b><i>Freebie · 214 emails</i></div><span class="badge badge--ok">Free</span></li>
+          </ol>
+        </div>
+        <ol class="flow">
+          <li><span>💬</span><b>They comment</b></li>
+          <li><span>📩</span><b>Link in DM</b></li>
+          <li><span>₹</span><b>They pay</b></li>
+          <li><span>🔓</span><b>It's theirs</b></li>
+        </ol>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ───────────────────────── ANY SIZE ───────────────────────── -->
+<section class="section section--dark size" id="size">
+  <div class="container">
+    <div class="section__head">
+      <h2>No follower minimum. Ever.</h2>
+      <p>Plenty of creators with 800 followers have audiences who trust them more than accounts ten times their size. Every tool works from your first day.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ───────────────────────── HOW IT WORKS ───────────────────────── -->
+<section class="section" id="how">
+  <div class="container">
+    <div class="section__head">
+      <h2>Live in your bio before your chai gets cold</h2>
+    </div>
+    <ol class="grid-3 steps">
+      <li class="card step"><span class="step__n">1</span><b>Build your page</b><p>Bring in your Instagram profile or start from scratch, pick your sections and a template.</p></li>
+      <li class="card step"><span class="step__n">2</span><b>Add your links and products</b><p>Short links for what you recommend, and the things you sell.</p></li>
+      <li class="card step"><span class="step__n">3</span><b>Turn on SuperDM</b><p>Choose a post, a word, and what gets sent.</p></li>
+    </ol>
+  </div>
+</section>
+
+<!-- ───────────────────────── CREATORS AGENCY ───────────────────────── -->
+<section class="section section--tint" id="agency">
+  <div class="container">
+    <div class="pp-plan card">
+      <div>
+        <span class="soon">Coming later</span>
+        <b class="pp-plan__name">Managing more than one creator?</b>
+        <p>We're building a way to run every creator you look after from one login: their SuperDMs, their pages and their products, with one report you can send the brand.</p>
+      </div>
+      <a class="btn btn--outline btn--lg" href="creators-agency.html">See what's planned</a>
+    </div>
+  </div>
+</section>
+
+<!-- ───────────────────────── BUSINESS CONNECT ───────────────────────── -->
+<section class="section" id="business">
+  <div class="container">
+    <div class="biz">
+      <div class="biz__copy">
+        <span class="soon">Coming later</span>
+        <h2 class="dive__title">Local shops and creators, working together.</h2>
+        <p class="dive__lead">We're building a way for businesses of any size — from a big brand to the café down your street — to find creators, post an offer, and pay for real results. You'll earn by promoting shops your audience actually visits.</p>
+        <p class="biz__promise">We'll only open this when it works properly. No early promises, no half-built version. Join the waitlist and we'll tell you the day it's ready.</p>
+      </div>
+      <div class="card biz__card">
+        <div id="bizPrompt">
+          <b class="biz__q">Run a business?</b>
+          <p class="biz__hint">Leave your details and we'll get in touch when Business connect is ready.</p>
+          <button class="btn btn--outline btn--wide" type="button" id="bizOpen">Tell us you're interested</button>
+        </div>
+        <form id="bizForm" novalidate hidden>
+          <div class="field">
+            <label for="bizName">Business name <span class="req">*</span></label>
+            <div class="input"><input id="bizName" type="text" autocomplete="organization" placeholder="e.g. Brew &amp; Co. Café" /></div>
+            <small class="err" id="errBizName"></small>
+          </div>
+          <div class="field">
+            <label for="bizContact">Email or WhatsApp number <span class="req">*</span></label>
+            <div class="input"><input id="bizContact" type="text" autocomplete="email" placeholder="you@business.com or 98765 43210" /></div>
+            <small class="err" id="errBizContact"></small>
+          </div>
+          <button class="btn btn--dark btn--wide" type="submit">Keep me posted</button>
+        </form>
+        <div id="bizDone" class="biz__done" hidden>
+          <span class="success__tick">✓</span>
+          <b>Thanks — you're on the list.</b>
+          <p class="biz__hint">We'll only get in touch when Business connect is ready.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ───────────────────────── WAITLIST ───────────────────────── -->
+<section class="cta" id="waitlist">
+  <div class="container cta__inner">
+    <h2>Get early access</h2>
+    <p>We're letting creators in batches.</p>
+
+    <form class="heroform heroform--cta" id="ctaForm" novalidate>
+      <label class="sr-only" for="ctaContact">Email or WhatsApp number</label>
+      <input id="ctaContact" type="text" autocomplete="email" placeholder="Email or WhatsApp number" />
+      <button class="btn btn--dark btn--lg" type="submit">Join the waitlist</button>
+    </form>
+    <small class="err heroform__err" id="errCta"></small>
+  </div>
+</section>
+
+<!-- ───────────────────────── FAQ ───────────────────────── -->
+<section class="section" id="faq">
+  <div class="container">
+    <div class="section__head">
+      <h2>Questions creators ask us</h2>
+    </div>
+    <div class="faq">
+      <details><summary>Is it free?</summary><p>Your bio page, links and tap counts are free forever. Pro adds advanced SuperDM, workflows and unlimited products.</p></details>
+      <details><summary>Do I need 1,000 followers?</summary><p>No. Any size, from day one.</p></details>
+      <details><summary>Will SuperDM get my account in trouble?</summary><p>No. It runs on Instagram's official API, and it only replies to people who comment, reply or message you first. Never cold messages.</p></details>
+      <details><summary>How do I get paid when I sell something?</summary><p>Buyers pay by UPI or card at checkout. The money shows up in your tapkit earnings, and you withdraw it to your bank account.</p></details>
+      <details><summary>What can I sell?</summary><p>Files like guides, e-books, presets and templates; locked content like a message, link or code; and free downloads in exchange for an email.</p></details>
+      <details><summary>Can I bring in my Instagram profile?</summary><p>Yes. The page builder can start from your Instagram handle or your current link page, or you can start from scratch.</p></details>
+      <details><summary>When is Business connect coming?</summary><p>When it's genuinely ready. Join the waitlist and you'll hear first.</p></details>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<!-- ───────────────────────── FOOTER ───────────────────────── -->
+<footer class="footer">
+  <div class="container footer__row">
+    <a class="brand" href="#top" aria-label="tapkit home"><img class="brand__dots" src="assets/logo-mark.svg" alt="" width="31" height="28" /><span class="brand__word">tapkit</span></a>
+    <span class="footer__made">Made in India for creators</span>
+    <nav class="footer__links" aria-label="Footer"><a href="#">Privacy</a><a href="#">Terms</a><a href="#">Contact</a></nav>
+  </div>
+</footer>
+
+<!-- a layout opened large (layouts.js) -->
+<dialog class="laybox" id="laybox" aria-labelledby="layboxT">
+  <div class="laybox__head"><div><b id="layboxT">Layout</b><i id="layboxWho"></i></div><button class="laybox__x" type="button" data-laybox-close aria-label="Close">×</button></div>
+  <div class="laybox__frame"><iframe id="layboxFrame" title="A live tapkit page"></iframe></div>
+  <div class="laybox__foot"><a class="btn btn--lg layouts__cta" href="#waitlist" data-laybox-close>Use this layout <span aria-hidden="true">→</span></a></div>
+</dialog>
+
+<!-- ───────────────────────── WAITLIST DIALOG (step 1: contact, step 2: questions) ───────────────────────── -->
+<dialog class="wl-dialog" id="wlDialog" aria-labelledby="wlTitle">
+  <button class="wl-dialog__x" type="button" data-wl-close aria-label="Close">×</button>
+  <div class="wl-dialog__head">
+    <h2 id="wlTitle">Get early access</h2>
+    <p id="wlLede">We're letting creators in batches.</p>
+  </div>
+
+  <!-- step 1: only the contact, saved as soon as it's entered -->
+  <form class="wl-form" id="wlStart" novalidate>
+    <div class="field">
+      <label for="wlContact">Email or WhatsApp number <span class="req">*</span></label>
+      <div class="input"><input id="wlContact" name="contact" type="text" autocomplete="email" placeholder="you@email.com or 98765 43210" required /></div>
+      <small class="err" id="errContact"></small>
+    </div>
+    <small class="err wl-form__err" id="errStart" role="alert"></small>
+    <button class="btn btn--dark btn--lg btn--wide" type="submit" id="wlStartBtn">Continue</button>
+    <p class="consent">By joining, you agree we can contact you about your tapkit access. No spam, and you can leave any time.</p>
+  </form>
+
+  <!-- step 2: the questions -->
+  <form class="wl-form" id="waitlistForm" novalidate hidden>
+    <p class="wl-saved"><span class="wl-saved__tick">✓</span> Saved <b id="wlSavedAs"></b> <button type="button" class="wl-saved__edit" id="wlChange">Change</button></p>
+    <div class="field">
+      <label for="wlHandle">Instagram handle <span class="req">*</span></label>
+      <div class="input input--prefix"><span>@</span><input id="wlHandle" name="handle" type="text" autocomplete="off" autocapitalize="off" spellcheck="false" placeholder="yourhandle" required /></div>
+      <small class="err" id="errHandle"></small>
+    </div>
+    <div class="field">
+      <label for="wlNiche">What do you post about?</label>
+      <div class="input input--select">
+        <select id="wlNiche" name="niche">
+          <option value="">Choose one</option>
+          <option>Beauty</option><option>Food</option><option>Fitness</option><option>Fashion</option>
+          <option>Education</option><option>Tech</option><option>Other</option>
+        </select>
+      </div>
+    </div>
+    <fieldset class="field">
+      <legend>Roughly how many followers?</legend>
+      <div class="segs">
+        <label class="seg"><input type="radio" name="followers" value="under-1k" /><span>Under 1K</span></label>
+        <label class="seg"><input type="radio" name="followers" value="1k-10k" /><span>1K–10K</span></label>
+        <label class="seg"><input type="radio" name="followers" value="10k-50k" /><span>10K–50K</span></label>
+        <label class="seg"><input type="radio" name="followers" value="50k-plus" /><span>50K+</span></label>
+      </div>
+    </fieldset>
+    <fieldset class="field">
+      <legend>Which tool do you want most?</legend>
+      <div class="segs">
+        <label class="seg"><input type="radio" name="tool" value="superdm" /><span>SuperDM</span></label>
+        <label class="seg"><input type="radio" name="tool" value="page" /><span>Bio page</span></label>
+        <label class="seg"><input type="radio" name="tool" value="links" /><span>Links</span></label>
+        <label class="seg"><input type="radio" name="tool" value="products" /><span>Products</span></label>
+      </div>
+    </fieldset>
+    <fieldset class="field">
+      <legend>Want to connect with brands for paid promotions?</legend>
+      <div class="segs segs--3">
+        <label class="seg"><input type="radio" name="brand_deals" value="yes" /><span>Yes</span></label>
+        <label class="seg"><input type="radio" name="brand_deals" value="maybe" /><span>Maybe later</span></label>
+        <label class="seg"><input type="radio" name="brand_deals" value="no" /><span>No</span></label>
+      </div>
+    </fieldset>
+    <small class="err wl-form__err" id="errSubmit" role="alert"></small>
+    <button class="btn btn--dark btn--lg btn--wide" type="submit" id="wlSubmit">Finish</button>
+  </form>
+
+  <div class="success wl-done" id="waitlistDone" hidden>
+    <span class="success__tick">✓</span>
+    <p class="success__rank">You're <b id="wlRank">#312</b>.</p>
+    <p class="success__sub">Invite other creators to move up the list.</p>
+    <div class="invite"><code id="inviteLink">tapkit.in/join?ref=you</code><button class="btn btn--dark" type="button" id="copyInvite">Copy your invite link</button></div>
+  </div>
+</dialog>
+
+<script src="script.js"></script>
+<script src="demo.js"></script>
+<script src="loop.js"></script>
+<script src="layouts.js"></script>
+<script src="compare.js"></script>
+<script src="hero-starfield.js"></script>
+</body>
+</html>

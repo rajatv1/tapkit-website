@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Log in — tapkit</title>
+<meta name="description" content="Log in to tapkit with your phone number. No password to remember." />
+<meta name="robots" content="noindex" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="styles.css" />
+<link rel="icon" type="image/svg+xml" href="assets/logo-mark.svg" />
+
+<!-- Where the app lives. Local folder by default; set it to the real address once
+     the app is deployed (e.g. 'https://app.tapkit.in'). -->
+<script>window.TAPKIT_APP = '';</script>
+
+<style>
+  .login{min-height:100dvh;display:grid;place-items:center;padding:32px 24px}
+  .login__card{width:100%;max-width:400px}
+  .login__brand{display:inline-flex;align-items:center;gap:9px;margin-bottom:26px}
+  .login__brand img{height:26px;width:auto;display:block}
+  .login__brand b{font-size:21px;font-weight:800;letter-spacing:-.045em}
+  .login h1{font-size:30px;font-weight:800;letter-spacing:-.035em;line-height:1.15;margin:0 0 8px}
+  .login p.sub{margin:0 0 24px;color:var(--muted);font-size:15px;line-height:1.55}
+  .phonebox{display:flex;align-items:center;gap:8px;border:1px solid var(--line);border-radius:12px;
+            background:#fff;padding-left:14px;margin-bottom:10px}
+  .phonebox:focus-within{outline:2px solid var(--accent);outline-offset:1px;border-color:var(--accent)}
+  .phonebox span{color:var(--muted);font-size:15px;flex:none}
+  .phonebox input{flex:1;min-width:0;border:none;outline:none;background:none;padding:14px 14px 14px 0;
+                  font:inherit;font-size:16px;color:var(--ink)}
+  .login .btn{width:100%}
+  .login__side{display:flex;gap:4px;background:var(--panel-2,#f4f4f5);border-radius:11px;padding:3px;margin:0 0 16px}
+  .login__side button{flex:1;padding:9px 6px;border:none;border-radius:9px;background:none;cursor:pointer;
+                      font:inherit;font-size:13.5px;font-weight:600;color:var(--muted)}
+  .login__side button[aria-pressed="true"]{background:#fff;color:var(--ink);box-shadow:0 1px 3px rgba(0,0,0,.07)}
+  .login__err{display:block;min-height:18px;margin:8px 0 0;font-size:13px;color:var(--bad)}
+  .login__alt{margin-top:22px;padding-top:20px;border-top:1px solid var(--line);font-size:14px;color:var(--muted)}
+  .login__alt a{color:var(--accent);font-weight:600}
+  .login__back{display:inline-block;margin-top:26px;font-size:13.5px;color:var(--muted)}
+  .login__note{margin-top:18px;font-size:12.5px;color:var(--muted-2);line-height:1.55}
+</style>
+</head>
+<body>
+
+<main class="login">
+  <div class="login__card">
+    <a class="login__brand" href="index.html" aria-label="tapkit home">
+      <img src="assets/logo-mark.svg" alt="" width="31" height="26" /><b>tapkit</b>
+    </a>
+
+    <h1>Welcome back.</h1>
+    <p class="sub">Log in with your phone number. No password to remember.</p>
+
+    <div class="login__side" role="group" aria-label="Which side are you on">
+      <button type="button" data-side="creator" aria-pressed="true">I'm a creator</button>
+      <button type="button" data-side="business" aria-pressed="false">Brand or agency</button>
+    </div>
+
+    <form id="loginForm" novalidate>
+      <label class="sr-only" for="phone">Mobile number</label>
+      <div class="phonebox">
+        <span>+91</span>
+        <input id="phone" type="tel" inputmode="numeric" autocomplete="tel-national"
+               maxlength="11" placeholder="98765 43210" />
+      </div>
+      <button class="btn btn--dark btn--lg" type="submit">Send me a code</button>
+      <small class="login__err" id="err"></small>
+    </form>
+
+    <div class="login__alt">
+      New here? <a href="index.html#waitlist">Join the waitlist</a> — we are letting creators in batches.
+    </div>
+
+    <p class="login__note">We text you a six-digit code. Your page, your links and your
+      products stay exactly where they are.</p>
+
+    <a class="login__back" href="index.html">← Back to tapkit.in</a>
+  </div>
+</main>
+
+<script>
+(function () {
+  var form = document.getElementById('loginForm');
+  var input = document.getElementById('phone');
+  var err = document.getElementById('err');
+
+  // Creators and brands are two different apps. The toggle picks which one
+  // the number is handed to; the note under the form says what changes.
+  var side = 'creator';
+  var note = document.querySelector('.login__note');
+  var CREATOR_NOTE = 'We text you a six-digit code. Your page, your links and your products stay exactly where they are.';
+  var BUSINESS_NOTE = 'We text you a six-digit code. The business side is where you post campaigns and answer the creators who apply.';
+
+  Array.prototype.forEach.call(document.querySelectorAll('[data-side]'), function (b) {
+    b.addEventListener('click', function () {
+      side = b.dataset.side;
+      Array.prototype.forEach.call(document.querySelectorAll('[data-side]'), function (o) {
+        o.setAttribute('aria-pressed', String(o === b));
+      });
+      if (note) note.textContent = side === 'business' ? BUSINESS_NOTE : CREATOR_NOTE;
+    });
+  });
+
+  // Where the apps live. Falls back to the sibling folder while this is all local.
+  function appUrl() {
+    var base = (window.TAPKIT_APP || '').replace(/\/$/, '');
+    var file = side === 'business' ? '/business.html' : '/app.html';
+    return base ? base + file : '../tapkit-app' + file;
+  }
+
+  form.addEventListener('submit', function (e) {
+    e.preventDefault();
+    var digits = input.value.replace(/\D/g, '').replace(/^91/, '');
+    if (!/^[6-9]\d{9}$/.test(digits)) {
+      err.textContent = 'Enter a 10-digit mobile number.';
+      input.focus();
+      return;
+    }
+    err.textContent = '';
+    // hand the number to the app, which sends the code and takes it from there
+    location.href = appUrl() + '?phone=' + encodeURIComponent(digits);
+  });
+
+  input.addEventListener('input', function () { if (err.textContent) err.textContent = ''; });
+})();
+</script>
+</body>
+</html>

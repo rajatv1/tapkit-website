@@ -10,6 +10,8 @@
   if (!box || typeof box.showModal !== 'function') return;
   var demo = document.getElementById('demo');
   var APP = ((demo && demo.getAttribute('data-app')) || '').replace(/\/$/, '');
+  var LOCAL = /^https?:\/\/(localhost|127\.0\.0\.1)(:|\/|$)/;   // same rule as demo.js
+  if (LOCAL.test(APP) && !LOCAL.test(location.origin)) return;
   var frame = document.getElementById('layboxFrame');
 
   function open(btn) {

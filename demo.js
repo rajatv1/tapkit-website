@@ -10,6 +10,9 @@
   var root = document.getElementById('demo');
   if (!root) return;
   var APP = (root.getAttribute('data-app') || '').replace(/\/$/, '');
+  // a localhost server only from a localhost site: elsewhere Chrome asks visitors for local network access
+  var LOCAL = /^https?:\/\/(localhost|127\.0\.0\.1)(:|\/|$)/;
+  if (LOCAL.test(APP) && !LOCAL.test(location.origin)) APP = '';
   var USER = 'ananya.glows';
 
   // the demo creator's SuperDMs — keep in step with seed-demo.js
@@ -53,6 +56,7 @@
   var online = null;   // null = not checked yet
   function check() {
     if (online !== null) return Promise.resolve(online);
+    if (!APP) { online = false; $$('.demo-offline').forEach(function (o) { o.hidden = false; }); return Promise.resolve(online); }
     var ctl = window.AbortController ? new AbortController() : null;
     var t = setTimeout(function () { if (ctl) ctl.abort(); }, 3000);
     return fetch(APP + '/' + USER, { mode: 'no-cors', cache: 'no-store', signal: ctl && ctl.signal })

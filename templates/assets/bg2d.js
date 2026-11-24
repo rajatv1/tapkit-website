@@ -1,5 +1,5 @@
 // Animated 2D backgrounds for the public page (theme.effect): snow, rain, fireflies, bokeh,
-// constellation, meteors, matrix and retro grid. Written for tapkit (the idea list follows the
+// constellation, meteors, matrix and retro grid. Written for supergrowth (the idea list follows the
 // shadcn.io background catalogue; none of its code is used). One canvas behind the page, drawn in
 // the theme's colours. Visitors who turn off motion get one still frame, and the animation pauses
 // while the tab is hidden.

@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>For realtors — supergrowth</title>
+<meta name="description" content="supergrowth for realtors and brokerages: your brokerage adds its homes once, and they show up on every realtor's own bio page — kept up to date, with commission offers and short links that count every tap." />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="styles.css?v=20261124b" />
+<link rel="icon" type="image/svg+xml" href="assets/logo-mark.svg" />
+</head>
+<body>
+
+<!-- ───────────────────────── NAV ───────────────────────── -->
+<header class="nav" id="nav">
+  <div class="nav__inner container">
+    <a class="brand" href="index.html" aria-label="supergrowth home"><img class="brand__logo" src="assets/logo-full.svg" alt="supergrowth" width="148" height="26" /></a>
+
+    <nav class="nav__menu" aria-label="Primary">
+      <div class="nav__item has-menu" id="productMenu">
+        <button class="nav__link" type="button" aria-expanded="false" aria-controls="productDropdown">Product <svg class="chev" viewBox="0 0 12 12" width="10" height="10" aria-hidden="true"><path d="M3 4.5L6 7.5l3-3" stroke="currentColor" stroke-width="1.6" fill="none" stroke-linecap="round"/></svg></button>
+        <div class="dropdown" id="productDropdown">
+          <a href="superdm.html"><span class="dd-ico"><svg viewBox="0 0 24 24" width="18" height="18" fill="none" aria-hidden="true"><path d="M21.5 12C21.5 17.2467 17.2467 21.5 12 21.5C10.3719 21.5 8.8394 21.0904 7.5 20.3687C5.63177 19.362 4.37462 20.2979 3.26592 20.4658C3.09774 20.4913 2.93024 20.4302 2.80997 20.31C2.62741 20.1274 2.59266 19.8451 2.6935 19.6074C3.12865 18.5818 3.5282 16.6382 2.98341 15C2.6698 14.057 2.5 13.0483 2.5 12C2.5 6.75329 6.75329 2.5 12 2.5C17.2467 2.5 21.5 6.75329 21.5 12Z" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/><path d="M12.1257 12H12.0007M8.125 12H8M16.125 12H16M12.2507 12C12.2507 12.1381 12.1388 12.25 12.0007 12.25C11.8627 12.25 11.7507 12.1381 11.7507 12C11.7507 11.8619 11.8627 11.75 12.0007 11.75C12.1388 11.75 12.2507 11.8619 12.2507 12ZM8.25 12C8.25 12.1381 8.13807 12.25 8 12.25C7.86193 12.25 7.75 12.1381 7.75 12C7.75 11.8619 7.86193 11.75 8 11.75C8.13807 11.75 8.25 11.8619 8.25 12ZM16.25 12C16.25 12.1381 16.1381 12.25 16 12.25C15.8619 12.25 15.75 12.1381 15.75 12C15.75 11.8619 15.8619 11.75 16 11.75C16.1381 11.75 16.25 11.8619 16.25 12Z" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/></svg></span><span><b>SuperDM</b><i>They comment a word, your DM goes out</i></span></a>
+          <a href="bio-page.html"><span class="dd-ico"><svg viewBox="0 0 24 24" width="18" height="18" fill="none" aria-hidden="true"><path d="M4.69141 20.7066C5.51196 18.1017 8.10493 16.18 11.0037 16.0379C11.3163 16.0226 11.6475 16.0097 12.0029 16L12.998 16.0663C15.924 16.2614 18.494 18.1152 19.3109 20.7066" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/><path d="M2.5 12C2.5 7.52166 2.5 5.28249 3.89124 3.89124C5.28249 2.5 7.52166 2.5 12 2.5C16.4783 2.5 18.7175 2.5 20.1088 3.89124C21.5 5.28249 21.5 7.52166 21.5 12C21.5 16.4783 21.5 18.7175 20.1088 20.1088C18.7175 21.5 16.4783 21.5 12 21.5C7.52166 21.5 5.28249 21.5 3.89124 20.1088C2.5 18.7175 2.5 16.4783 2.5 12Z" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/><path d="M14.9961 10C14.9961 11.6569 13.6529 13 11.9961 13C10.3392 13 8.99609 11.6569 8.99609 10C8.99609 8.34315 10.3392 7 11.9961 7C13.6529 7 14.9961 8.34315 14.9961 10Z" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/></svg></span><span><b>Bio page</b><i>Your page, built step by step</i></span></a>
+          <a href="links.html"><span class="dd-ico"><svg viewBox="0 0 24 24" width="18" height="18" fill="none" aria-hidden="true"><path d="M9.14339 10.691L9.35031 10.4841C11.329 8.50532 14.5372 8.50532 16.5159 10.4841C18.4947 12.4628 18.4947 15.671 16.5159 17.6497L13.6497 20.5159C11.671 22.4947 8.46279 22.4947 6.48405 20.5159C4.50532 18.5372 4.50532 15.329 6.48405 13.3503L6.9484 12.886" stroke="currentColor" stroke-linecap="round" stroke-width="1.5"/><path d="M17.0516 11.114L17.5159 10.6497C19.4947 8.67095 19.4947 5.46279 17.5159 3.48405C15.5372 1.50532 12.329 1.50532 10.3503 3.48405L7.48405 6.35031C5.50532 8.32904 5.50532 11.5372 7.48405 13.5159C9.46279 15.4947 12.671 15.4947 14.6497 13.5159L14.8566 13.309" stroke="currentColor" stroke-linecap="round" stroke-width="1.5"/></svg></span><span><b>Links</b><i>Short links that count every tap</i></span></a>
+          <a href="products.html"><span class="dd-ico"><svg viewBox="0 0 24 24" width="18" height="18" fill="none" aria-hidden="true"><path d="M3.32352 13.0113C3.6739 10.009 4.18586 7.75784 4.66063 6.15851C5.04994 4.84711 5.24459 4.19141 6.04283 3.5957C6.84107 3 7.65697 3 9.28876 3H14.7113C16.3431 3 17.159 3 17.9572 3.5957C18.7554 4.19141 18.9501 4.84711 19.3394 6.15851C19.8142 7.75784 20.3261 10.009 20.6765 13.0113C21.0895 16.5497 21.2959 18.3189 20.1027 19.6594C18.9095 21 16.9758 21 13.1084 21H10.8916C7.02422 21 5.09052 21 3.89731 19.6594C2.70411 18.3189 2.91058 16.5497 3.32352 13.0113Z" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/><path d="M9 7C9 8.65685 10.3431 10 12 10C13.6569 10 15 8.65685 15 7" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/></svg></span><span><b>Products</b><i>Sell files and locked content, give away freebies</i></span></a>
+          <a href="workflows.html"><span class="dd-ico"><svg viewBox="0 0 24 24" width="18" height="18" fill="none" aria-hidden="true"><path d="M5.22576 11.3294L12.224 2.34651C12.7713 1.64397 13.7972 2.08124 13.7972 3.01707V9.96994C13.7972 10.5305 14.1995 10.985 14.6958 10.985H18.0996C18.8729 10.985 19.2851 12.0149 18.7742 12.6706L11.776 21.6535C11.2287 22.356 10.2028 21.9188 10.2028 20.9829V14.0301C10.2028 13.4695 9.80048 13.015 9.3042 13.015H5.90035C5.12711 13.015 4.71494 11.9851 5.22576 11.3294Z" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/></svg></span><span><b>Workflows</b><i>Ready-made SuperDM setups for your niche</i></span></a>
+          <a href="business-connect.html"><span class="dd-ico"><svg viewBox="0 0 24 24" width="18" height="18" fill="none" aria-hidden="true"><path d="M3.50002 10V15C3.50002 17.8284 3.50002 19.2426 4.37869 20.1213C5.25737 21 6.67159 21 9.50002 21H14.5C17.3284 21 18.7427 21 19.6213 20.1213C20.5 19.2426 20.5 17.8284 20.5 15V10" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/><path d="M17 7.50184C17 8.88255 15.8807 9.99997 14.5 9.99997C13.1193 9.99997 12 8.88068 12 7.49997C12 8.88068 10.8807 9.99997 9.50002 9.99997C8.1193 9.99997 7.00002 8.88068 7.00002 7.49997C7.00002 8.88068 5.82655 9.99997 4.37901 9.99997C3.59984 9.99997 2.90008 9.67567 2.42 9.16087C1.59462 8.2758 2.12561 6.97403 2.81448 5.98842L3.20202 5.45851C4.08386 4.2527 4.52478 3.6498 5.16493 3.32494C5.80508 3.00008 6.55201 3.00018 8.04587 3.00038L15.9551 3.00143C17.4485 3.00163 18.1952 3.00173 18.8351 3.32658C19.475 3.65143 19.9158 4.25414 20.7974 5.45957L21.1855 5.99029C21.8744 6.97589 22.4054 8.27766 21.58 9.16273C21.0999 9.67754 20.4002 10.0018 19.621 10.0018C18.1734 10.0018 17 8.88255 17 7.50184Z" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/><path d="M14.9971 17C14.3133 17.6072 13.2247 18 11.9985 18C10.7723 18 9.68376 17.6072 9 17" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/></svg></span><span><b>Business connect <em class="dd-soon">Coming later</em></b><i>Local shops and creators, working together</i></span></a>
+        </div>
+      </div>
+      <a class="nav__link" href="realtors.html" aria-current="page">For realtors</a>
+      <a class="nav__link" href="pricing.html">Pricing</a>
+      <a class="nav__link" href="index.html#faq">FAQ</a>
+    </nav>
+
+    <div class="nav__actions">
+      <a class="nav__link nav__login" href="login.html">Log in</a>
+      <a class="btn btn--dark" href="index.html#waitlist">Join the waitlist</a>
+      <button class="nav__burger" id="burger" aria-label="Menu" aria-expanded="false"><span></span><span></span></button>
+    </div>
+  </div>
+  <div class="mobile-menu" id="mobileMenu">
+    <span class="mobile-menu__label">Product</span><a class="mobile-menu__sub" href="superdm.html">SuperDM</a><a class="mobile-menu__sub" href="bio-page.html">Bio page</a><a class="mobile-menu__sub" href="links.html">Links</a><a class="mobile-menu__sub" href="products.html">Products</a><a class="mobile-menu__sub" href="workflows.html">Workflows</a><a class="mobile-menu__sub" href="business-connect.html">Business connect</a><a href="realtors.html">For realtors</a><a href="pricing.html">Pricing</a><a href="index.html#faq">FAQ</a>
+    <div class="mobile-menu__cta"><a class="btn btn--dark" href="index.html#waitlist">Join the waitlist</a>
+      <a class="btn btn--outline" href="login.html" style="margin-top:8px">Log in</a></div>
+  </div>
+</header>
+
+<main id="top">
+
+<section class="hero">
+  <div class="hero__sky hero__sky--page">
+  <div class="container hero__inner">
+    <span class="pill"><span class="pill__tag">For realtors</span> Early access</span>
+    <h1 class="hero__title">Every listing on your bio page. Kept up to date for you.</h1>
+    <p class="hero__sub">Your brokerage adds its homes once. They show up on your own supergrowth page, and the price drops, sales and new listings follow on their own. You share one link in your Instagram bio and stop rebuilding your listings by hand.</p>
+    <div class="hero__cta"><a class="btn btn--dark btn--lg hero__join" href="index.html#waitlist">Join the waitlist</a></div>
+  </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <div class="section__head"><h2>For realtors</h2></div>
+    <div class="grid-3">
+      <div class="card"><span class="feat-ico">🏡</span><b class="pp-plan__name">Your listings, on your page</b><p>The homes your brokerage shares appear as cards on your bio page, with the photo, price and a tap through to the listing. Show all of them, or pick the ones you want.</p></div>
+      <div class="card"><span class="feat-ico">🔄</span><b class="pp-plan__name">Always current</b><p>When a price drops or a home sells, your page changes with it. No sold homes sitting on your profile, no stale prices.</p></div>
+      <div class="card"><span class="feat-ico">💬</span><b class="pp-plan__name">SuperDM for open houses</b><p>Someone comments "HOME" on your reel and gets the listing in their DMs straight away, while you're busy showing the place.</p></div>
+      <div class="card"><span class="feat-ico">↗</span><b class="pp-plan__name">Links that count taps</b><p>Short links for each home, so you can see which listing people actually tap on, and from where.</p></div>
+      <div class="card"><span class="feat-ico">💰</span><b class="pp-plan__name">See the commission offer</b><p>When your brokerage runs a campaign on a home ("bring a buyer, earn this much"), you see it beside the home and can say you're working on it.</p></div>
+      <div class="card"><span class="feat-ico">📋</span><b class="pp-plan__name">Your page is still yours</b><p>Your links, your products and your look stay the same. The listings are one more section, not a takeover.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="section section--tint">
+  <div class="container">
+    <div class="section__head"><h2>For brokerages</h2></div>
+    <div class="grid-3">
+      <div class="card"><span class="feat-ico">🏢</span><b class="pp-plan__name">Add your homes once</b><p>Type a listing in, or paste the link to its page on your own website and we read the title, price and picture for you to check.</p></div>
+      <div class="card"><span class="feat-ico">🔗</span><b class="pp-plan__name">One link for your realtors</b><p>Send your team one join link. Make separate links for an office or a team, see who joined by which, and turn one off without the others.</p></div>
+      <div class="card"><span class="feat-ico">👁</span><b class="pp-plan__name">Open or private</b><p>Switch a home between open and private and it appears on, or leaves, every realtor's page at once.</p></div>
+      <div class="card"><span class="feat-ico">📣</span><b class="pp-plan__name">Realtor campaigns</b><p>Put a commission offer on a home that needs a push. Your realtors see it, and you see who is working on it. You pay the commission the way you always do.</p></div>
+      <div class="card"><span class="feat-ico">🤖</span><b class="pp-plan__name">An assistant for your listings</b><p>Suggestions from your own listings, and answers to questions about them, without digging through a spreadsheet.</p></div>
+      <div class="card"><span class="feat-ico">📡</span><b class="pp-plan__name">Listing feeds</b><p>Connect your listing feed (like CREA's DDF in Canada) with your own credentials, and new homes come in on their own.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <div class="section__head"><h2>Up and running in three steps</h2></div>
+    <ol class="grid-3 steps">
+      <li class="card step"><span class="step__n">1</span><b>The brokerage adds its homes</b><p>By hand, from your website's listing pages, or from a feed.</p></li>
+      <li class="card step"><span class="step__n">2</span><b>Realtors join with one link</b><p>Each realtor signs up, claims their supergrowth page and picks which homes to show.</p></li>
+      <li class="card step"><span class="step__n">3</span><b>Share and sell</b><p>The bio link goes in Instagram. Buyers tap through, DMs go out, and every page stays current.</p></li>
+    </ol>
+  </div>
+</section>
+
+<section class="section section--tint" id="faq">
+  <div class="container">
+    <div class="section__head"><h2>What realtors ask us</h2></div>
+    <div class="faq">
+      <details><summary>Do I need my brokerage to join?</summary><p>For the shared listings, yes: your brokerage adds the homes and sends you the link. Your bio page, links and SuperDM work on their own, with or without a brokerage.</p></details>
+      <details><summary>Does supergrowth pay the commission?</summary><p>No. supergrowth shows the offer and who took it up. The commission is paid by your brokerage, the way it pays any other.</p></details>
+      <details><summary>What happens if I move to another brokerage?</summary><p>Your page, your links and your followers stay with you. The old brokerage's homes leave your page, and the new one's come in when you join with their link.</p></details>
+      <details><summary>Is it live?</summary><p>supergrowth is pre-launch. Realtors and brokerages on the waitlist get in with the first batches.</p></details>
+    </div>
+  </div>
+</section>
+
+<section class="cta">
+  <div class="container cta__inner">
+    <h2>Bring your listings to your bio</h2>
+    <p>Join the waitlist as a realtor or a brokerage, and we'll get you in early.</p>
+    <div class="hero__cta"><a class="btn btn--dark btn--lg" href="index.html#waitlist">Join the waitlist</a></div>
+  </div>
+</section>
+
+</main>
+
+<!-- ───────────────────────── FOOTER ───────────────────────── -->
+<footer class="footer">
+  <div class="container footer__row">
+    <a class="brand" href="index.html" aria-label="supergrowth home"><img class="brand__logo" src="assets/logo-full.svg" alt="supergrowth" width="148" height="26" /></a>
+    <span class="footer__made">Made in India for creators</span>
+    <nav class="footer__links" aria-label="Footer"><a href="#">Privacy</a><a href="#">Terms</a><a href="#">Contact</a></nav>
+  </div>
+</footer>
+
+<script src="script.js?v=20261124b"></script>
+<script src="hero-ascii.js?v=20261124b"></script>
+</body>
+</html>

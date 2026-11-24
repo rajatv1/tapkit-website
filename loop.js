@@ -1,5 +1,5 @@
 /* ============================================================
-   tapkit — the animated loop in "Four tools, one loop" (index.html#loop)
+   supergrowth — the animated loop in "Four tools, one loop" (index.html#loop)
    Comment → DM → your page → paid: the steps light up one after another,
    a dot runs along the line, the small screen shows that step, and the
    tool card that does that step lights up below. Tapping a step jumps

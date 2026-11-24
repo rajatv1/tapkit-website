@@ -449,7 +449,7 @@ html.nonav a, html.nonav button { cursor: pointer; }
 .tapped { animation: tap .26s ease; }
 @keyframes tap { 40% { transform: scale(.96); filter: brightness(.94); } }
 
-/* shown inside the tapkit website (?embed=1): no "Made with tapkit" footer under the page */
+/* shown inside the supergrowth website (?embed=1): no "Made with supergrowth" footer under the page */
 html.embed .foot { display: none; }
 
 /* side layout (Noir): name and bio sit as one tight block centred on the photo; the category tag is dropped here,

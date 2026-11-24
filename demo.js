@@ -1,6 +1,6 @@
 /* ============================================================
-   tapkit — the live demo in the home page hero (index.html#demo)
-   Bio page and Products show the real pages from the tapkit server (data-app on #demo),
+   supergrowth — the live demo in the home page hero (index.html#demo)
+   Bio page and Products show the real pages from the supergrowth server (data-app on #demo),
    seeded by tapkit-app/server/scripts/seed-demo.js. SuperDM can't run against Instagram here,
    so it is replayed in the page with the same matching rules and messages as the server's
    /api/automations/simulate, using the demo creator's SuperDMs below.
@@ -67,8 +67,8 @@
     // ?embed=1: the page hides its own scrollbar while it is inside this preview;
     // ?nonav=1 (the Bio page tab): everything reacts to a tap but nothing opens
     // the pages are plain copies (templates/), so checkout can't run: every preview is look-only
-    check().then(function (ok) { if (ok) frame.src = APP + path + '/?embed=1&nonav=1'; });
-    if (urlEl) urlEl.textContent = 'tapkit.in' + path;
+    check().then(function (ok) { if (ok) frame.src = APP + path + '/index.html?embed=1&nonav=1'; });
+    if (urlEl) urlEl.textContent = 'supergrowth.in' + path;
   }
   // the demo creators (seed-demo.js) and which page / product each preview is showing
   // the Bio page tab opens on Meera's fitness page; SuperDM and Products stay on Ananya
@@ -83,7 +83,7 @@
   }
   // the layouts gallery below the hero: each tile is a creator's page, look-only, loaded once the server answers
   check().then(function (ok) {
-    if (ok) $$('[data-lay]', document).forEach(function (f) { f.src = APP + f.getAttribute('data-lay') + '/?embed=1&nonav=1'; });
+    if (ok) $$('[data-lay]', document).forEach(function (f) { f.src = APP + f.getAttribute('data-lay') + '/index.html?embed=1&nonav=1'; });
   });
 
   // "See examples" under the hero sign-up: show the next demo creator's page in the preview

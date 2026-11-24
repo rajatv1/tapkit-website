@@ -1,5 +1,5 @@
 /* ============================================================
-   tapkit — landing page interactions
+   supergrowth — landing page interactions
    ============================================================ */
 (function () {
   'use strict';
@@ -141,7 +141,7 @@
 
   var sendSignup = function (data) {
     if (!WAITLIST_ENDPOINT) {
-      if (window.console) console.warn('[tapkit] WAITLIST_ENDPOINT is not set, so this signup was not saved:', data);
+      if (window.console) console.warn('[supergrowth] WAITLIST_ENDPOINT is not set, so this signup was not saved:', data);
       return Promise.resolve();
     }
     var body = new URLSearchParams(data);
@@ -283,7 +283,7 @@
       submitBtn.disabled = true;
       submitBtn.textContent = 'Sending…';
       sendSignup(data).then(function () {
-        $('#inviteLink').textContent = 'tapkit.in/join?ref=' + encodeURIComponent(data.handle.toLowerCase());
+        $('#inviteLink').textContent = 'supergrowth.in/join?ref=' + encodeURIComponent(data.handle.toLowerCase());
         showStep(3);
       }).catch(function () {
         $('#errSubmit').textContent = 'We couldn’t send that. Check your connection and try again.';
@@ -330,12 +330,12 @@
       });
     });
 
-    // hero "tapkit.in/ yourname · Reserve": the name they want goes into the waitlist's handle field
+    // hero "supergrowth.in/ yourname · Reserve": the name they want goes into the waitlist's handle field
     var claim = $('#heroClaim');
     if (claim) {
       var alias = $('#heroAlias');
       var aliasError = function (v) {
-        return !v ? 'Type the name you want after tapkit.in/'
+        return !v ? 'Type the name you want after supergrowth.in/'
           : !/^[a-z0-9._]{3,30}$/.test(v) ? 'Use 3–30 letters, numbers, dots or underscores.'
           : '';
       };

@@ -1,5 +1,5 @@
 /**
- * tapkit — waitlist collector (Google Apps Script)
+ * supergrowth — waitlist collector (Google Apps Script)
  *
  * Paste this into a Google Sheet via Extensions → Apps Script, then
  * Deploy → New deployment → Web app (Execute as: Me, Who has access: Anyone).
@@ -60,7 +60,7 @@ function findRow(sheet, leadId) {
 
 // Open the web-app URL in a browser to check the deployment is live.
 function doGet() {
-  return json({ ok: true, message: 'tapkit waitlist endpoint is running' });
+  return json({ ok: true, message: 'supergrowth waitlist endpoint is running' });
 }
 
 // Keep visitor input as plain text: a value starting with = + - @ would

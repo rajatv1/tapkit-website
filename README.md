@@ -1,6 +1,6 @@
-# tapkit — website (waitlist landing page)
+# supergrowth — website (waitlist landing page)
 
-Pre-launch waitlist site for tapkit: a bio page built step by step, SuperDM (comment a word → get the DM), short links that count every tap, and products (files, locked content, freebies). Business connect and the agency workspace are teased as coming later. The product itself lives in `../tapkit-app`.
+Pre-launch waitlist site for supergrowth: a bio page built step by step, SuperDM (comment a word → get the DM), short links that count every tap, and products (files, locked content, freebies). Business connect and the agency workspace are teased as coming later. The product itself lives in `../tapkit-app`.
 
 Plain HTML/CSS/JS, no build step. Set in Inter.
 
@@ -9,7 +9,7 @@ Plain HTML/CSS/JS, no build step. Set in Inter.
 Open `index.html` in a browser, or serve the folder:
 
 ```
-npx serve .
+npx http-server -p 3000 -c-1 .   # not `serve`: it shows a file list for folders like templates/meera.fit
 ```
 
 ## Files
@@ -19,14 +19,13 @@ npx serve .
 - Product pages, linked from the Product menu: `superdm.html`, `bio-page.html`, `links.html`, `products.html`, `workflows.html`, `business-connect.html` (each: dark header, phone mockup or feature detail, the plan it is in, FAQ, waitlist button)
 - `styles.css` — design tokens at the top (`:root`), then components
 - `script.js` — nav, hero tabs, hero signup, waitlist + business forms, scroll reveal
-- `demo.js` — the live demo in the home page hero (`#demo`): Bio page and Products tabs show the real pages from the tapkit server inside a phone; the SuperDM tab replays a reel/story comment and the DM it triggers, with the same matching rules as the server's `/api/automations/simulate`
-- `hero-starfield.js` — the home hero background: a 2D-canvas dot grid in tapkit plum that breathes, with twinkling four-point stars, dots pushed aside by the pointer, and the odd shooting star (written for tapkit, after the idea of the Framer “Starfield Motion” component); one still frame with reduced motion
-- `hero-sky.js` — (other pages) Three.js (r128, from cdnjs) shader for the hero: dark night sky, twinkling stars, two layers of drifting clouds lit from below; falls back to a CSS gradient when WebGL is missing or reduced motion is on
+- `demo.js` — the live demo in the home page hero (`#demo`): Bio page and Products tabs show the real pages from the supergrowth server inside a phone; the SuperDM tab replays a reel/story comment and the DM it triggers, with the same matching rules as the server's `/api/automations/simulate`
+- `hero-ascii.js` — the hero background on every page: an orange ASCII ocean swell on a 2D canvas (three sine waves bent by a slow fourth; calmer at the top, heavier at the bottom). Pauses off screen; one still frame with reduced motion.
 
 ## Sections
 
 1. Nav — Product menu (SuperDM · Bio page · Links · Products · Workflows · Business connect) · For agencies · Pricing · FAQ · Log in · Join the waitlist
-2. Hero — full-width night sky (hero-sky.js): early-access pill, headline, subhead, inline email/WhatsApp signup on the left; the **live demo** in a phone on the right (Bio page / SuperDM / Products, see “The live demo” below)
+2. Hero — full-width hero with the orange ASCII swell (hero-ascii.js): early-access pill, headline, subhead, inline email/WhatsApp signup on the left; the **live demo** in a phone on the right (Bio page / SuperDM / Products, see “The live demo” below)
 3. Four tools, one loop (SuperDM, Bio page, Links, Products)
 4. Sell what you already know — files, locked content, freebies; comment → DM → pay → unlock
 5. Start at any size
@@ -46,7 +45,7 @@ npx serve .
 
 Signups are sent to a Google Sheet through a small Apps Script. One-time setup, about 3 minutes:
 
-1. Create a new Google Sheet (any name, e.g. `tapkit waitlist`).
+1. Create a new Google Sheet (any name, e.g. `supergrowth waitlist`).
 2. In the Sheet: **Extensions → Apps Script**. Delete what's there and paste the contents of `waitlist-apps-script.gs`. Save.
 3. **Deploy → New deployment →** gear icon **→ Web app**.
    - Execute as: **Me**

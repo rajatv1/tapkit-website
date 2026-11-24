@@ -1,5 +1,5 @@
 /* ============================================================
-   tapkit — the layouts gallery (index.html#layouts)
+   supergrowth — the layouts gallery (index.html#layouts)
    Tapping a tile opens that page large in a pop-up (look-only, like the
    tiles: ?embed=1&nonav=1), with "Use this layout", which goes to the
    waitlist. The tiles' slow up-and-down scroll is CSS (.lay__frame).
@@ -18,7 +18,7 @@
     var fig = btn.closest('.lay'), who = fig && fig.querySelector('figcaption i');
     document.getElementById('layboxT').textContent = btn.getAttribute('data-name') + ' layout';
     document.getElementById('layboxWho').textContent = who ? who.textContent : '';
-    frame.src = APP + btn.getAttribute('data-open') + '/?embed=1&nonav=1';
+    frame.src = APP + btn.getAttribute('data-open') + '/index.html?embed=1&nonav=1';
     box.showModal();
     document.documentElement.classList.add('wl-open');
   }

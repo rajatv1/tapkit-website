@@ -8,7 +8,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
-<link rel="stylesheet" href="styles.css?v=20261125c" />
+<link rel="stylesheet" href="styles.css?v=20261125e" />
 <link rel="icon" type="image/svg+xml" href="assets/logo-mark.svg" />
 </head>
 <body>
@@ -164,6 +164,24 @@
         </div></div></div>
       </article>
 
+    </div>
+  </div>
+</section>
+
+<!-- ───────────────────────── REALTOR TEMPLATES (templates/*, opened large by layouts.js) ───────────────────────── -->
+<section class="section layouts" id="layouts" aria-labelledby="layT">
+  <div class="container">
+    <div class="section__head">
+      <h2 id="layT">A page that looks like your market</h2>
+      <p>Start from a realtor layout, then change anything. Each one carries the licence line your state or province asks for.</p>
+    </div>
+    <div class="layouts__row layouts__row--3">
+      <figure class="lay"><div class="lay__frame"><iframe src="templates/ryan.toronto/index.html?embed=1&amp;nonav=1" title="Classic layout: a sample realtor page" loading="lazy" tabindex="-1"></iframe><button class="lay__open" type="button" data-open="/ryan.toronto" data-name="Classic" aria-label="Open the Classic layout"></button></div>
+        <figcaption><b>Classic</b><i>Toronto · RECO</i></figcaption></figure>
+      <figure class="lay"><div class="lay__frame"><iframe src="templates/maya.austin/index.html?embed=1&amp;nonav=1" title="Estate layout: a sample realtor page" loading="lazy" tabindex="-1"></iframe><button class="lay__open" type="button" data-open="/maya.austin" data-name="Estate" aria-label="Open the Estate layout"></button></div>
+        <figcaption><b>Estate</b><i>Austin · TREC</i></figcaption></figure>
+      <figure class="lay"><div class="lay__frame"><iframe src="templates/jordan.sandiego/index.html?embed=1&amp;nonav=1" title="Coastal layout: a sample realtor page" loading="lazy" tabindex="-1"></iframe><button class="lay__open" type="button" data-open="/jordan.sandiego" data-name="Coastal" aria-label="Open the Coastal layout"></button></div>
+        <figcaption><b>Coastal</b><i>San Diego · DRE</i></figcaption></figure>
     </div>
   </div>
 </section>
@@ -372,8 +390,15 @@
   </div>
 </footer>
 
-<script src="script.js?v=20261125c"></script>
-<script src="hero-ascii.js?v=20261125c"></script>
+<!-- a layout opened large (layouts.js) -->
+<dialog class="laybox" id="laybox" aria-labelledby="layboxT" data-app="templates">
+  <div class="laybox__head"><div><b id="layboxT">Layout</b><i id="layboxWho"></i></div><button class="laybox__x" type="button" data-laybox-close aria-label="Close">×</button></div>
+  <div class="laybox__frame"><iframe id="layboxFrame" title="A sample supergrowth page"></iframe></div>
+  <div class="laybox__foot"><a class="btn btn--lg layouts__cta" href="index.html#waitlist" data-laybox-close>Use this layout <span aria-hidden="true">→</span></a></div>
+</dialog>
+
+<script src="script.js?v=20261125e"></script>
+<script src="hero-ascii.js?v=20261125e"></script>
 <script>
 /* the realtor workflows for workflows-slider.js */
 window.WFX_FLOWS = [
@@ -391,8 +416,9 @@ window.WFX_FLOWS = [
     text: "Your brokerage puts a bring-a-buyer offer on a home that needs a push. You see it on your page, say you are on it, and your brokerage pays you as usual." }
 ];
 </script>
-<script src="tools.js?v=20261125c"></script>
-<script src="workflows-slider.js?v=20261125c"></script>
-<script src="pricing.js?v=20261125c"></script>
+<script src="tools.js?v=20261125e"></script>
+<script src="workflows-slider.js?v=20261125e"></script>
+<script src="pricing.js?v=20261125e"></script>
+<script src="layouts.js?v=20261125e"></script>
 </body>
 </html>

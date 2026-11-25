@@ -9,7 +9,8 @@
   var box = document.getElementById('laybox');
   if (!box || typeof box.showModal !== 'function') return;
   var demo = document.getElementById('demo');
-  var APP = ((demo && demo.getAttribute('data-app')) || '').replace(/\/$/, '');
+  // the pages' folder: #demo's data-app on the home page, or the pop-up's own data-app (realtors.html)
+  var APP = ((demo && demo.getAttribute('data-app')) || box.getAttribute('data-app') || '').replace(/\/$/, '');
   var LOCAL = /^https?:\/\/(localhost|127\.0\.0\.1)(:|\/|$)/;   // same rule as demo.js
   if (LOCAL.test(APP) && !LOCAL.test(location.origin)) return;
   var frame = document.getElementById('layboxFrame');

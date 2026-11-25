@@ -2199,3 +2199,6 @@ main > .hero--full .hero__inner.container{max-width:1320px;padding-left:44px;pad
   .rfound{grid-template-columns:1fr}
   .rfound .btn{grid-column:1;grid-row:auto;justify-self:start;margin-top:8px}
 }
+
+/* realtors page: three bigger template tiles */
+@media (min-width:901px){ .layouts__row--3{--cw:250;gap:22px} .layouts__row--3 .lay__frame{height:480px} }

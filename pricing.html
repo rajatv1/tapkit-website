@@ -4,11 +4,11 @@
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>Pricing — supergrowth</title>
-<meta name="description" content="supergrowth pricing: Free ₹0/month, Pro ₹400/month, Pro Annual ₹3,999/year. Founding creators on the waitlist get Pro free for their first year." />
+<meta name="description" content="supergrowth pricing for creators and realtors: Free $0, Pro $10/month or $99/year. Founding creators on the waitlist get Pro free for their first year." />
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
-<link rel="stylesheet" href="styles.css?v=20261124b" />
+<link rel="stylesheet" href="styles.css?v=20261125b" />
 <link rel="icon" type="image/svg+xml" href="assets/logo-mark.svg" />
 </head>
 <body>
@@ -56,38 +56,18 @@
   <div class="container hero__inner">
     <span class="pill"><span class="pill__tag">Pricing</span> Founding creators get Pro free for a year</span>
     <h1 class="hero__title">Free to start.<br />Go Pro when you grow.</h1>
-    <p class="hero__sub">Your bio page, links and basic analytics are free forever. Pro adds advanced SuperDM, SuperDM workflows and unlimited products.</p>
+    <p class="hero__sub">Your bio page, links and basic analytics are free forever. Pro is $10 a month, for creators and realtors alike.</p>
     <div class="hero__cta"><a class="btn btn--dark btn--lg hero__join" href="index.html#waitlist">Join the waitlist</a></div>
   </div>
   </div>
 </section>
 
-<!-- ───────────────────────── PLANS ───────────────────────── -->
+<!-- ───────────────────────── PLANS ─────────────────────────
+     Creators and realtors, one at a time (pricing.js holds every price: dollars first, India price under it) -->
 <section class="section section--tint plans" id="plans">
   <div class="container">
-    <div class="grid-3 pricing">
-      <div class="card price">
-        <b class="price__name">Free</b><div class="price__amt">₹0<i>/month</i></div>
-        <ul><li>Bio page</li><li>Links</li><li>Shareable profile</li><li>Basic analytics</li><li>Limited products</li></ul>
-        <a class="btn btn--outline btn--block" href="index.html#waitlist">Join the waitlist</a>
-      </div>
-      <div class="card price">
-        <b class="price__name">Pro</b><div class="price__amt">₹400<i>/month</i></div>
-        <ul><li>Everything in Free</li><li>Advanced SuperDM</li><li>SuperDM workflows</li><li>Unlimited products</li><li>Advanced analytics</li><li>Customization</li></ul>
-        <div class="price__soon"><span class="price__soon-tag">Coming soon</span><b>Business Connect</b><p>Brand and agency discovery, plus creator-business workflows.</p></div>
-        <a class="btn btn--outline btn--block" href="index.html#waitlist">Join the waitlist</a>
-      </div>
-      <div class="card price price--hot">
-        <span class="price__flag">Free for founding creators</span>
-        <b class="price__name">Pro Annual</b><div class="price__amt">₹3,999<i>/year</i></div>
-        <ul><li>Same as Pro</li><li>About ₹333/month effective price</li></ul>
-        <a class="btn btn--dark btn--block" href="index.html#waitlist">Join the waitlist</a>
-      </div>
-    </div>
-    <div class="pricing-extra">
-      <div class="card"><span class="eyebrow">Fee per sale</span><b class="pp-plan__name">5%</b><p>Only on successful sales.</p></div>
-    </div>
-    <p class="founding"><span>★</span> Founding creators on the waitlist get Pro free for their first year.</p>
+    <div class="plx__tabs" data-plans-tabs aria-label="Show plans for"></div>
+    <div data-plans="creators"></div>
   </div>
 </section>
 
@@ -95,28 +75,9 @@
 <section class="section" id="compare">
   <div class="container">
     <div class="section__head">
-      <h2>What's in each plan</h2>
+      <h2>What&#39;s in each plan</h2>
     </div>
-    <div class="cmp-wrap">
-      <table class="cmp">
-        <thead>
-          <tr><th scope="col"><span class="sr-only">Feature</span></th><th scope="col">Free<i>₹0/month</i></th><th scope="col">Pro<i>₹400/month</i></th><th scope="col" class="cmp__hot">Pro Annual<i>₹3,999/year</i></th></tr>
-        </thead>
-        <tbody>
-          <tr><th scope="row">Bio page</th><td><span class="cmp__yes" aria-label="Included">✓</span></td><td><span class="cmp__yes" aria-label="Included">✓</span></td><td><span class="cmp__yes" aria-label="Included">✓</span></td></tr>
-          <tr><th scope="row">Links</th><td><span class="cmp__yes" aria-label="Included">✓</span></td><td><span class="cmp__yes" aria-label="Included">✓</span></td><td><span class="cmp__yes" aria-label="Included">✓</span></td></tr>
-          <tr><th scope="row">Shareable profile</th><td><span class="cmp__yes" aria-label="Included">✓</span></td><td><span class="cmp__yes" aria-label="Included">✓</span></td><td><span class="cmp__yes" aria-label="Included">✓</span></td></tr>
-          <tr><th scope="row">Basic analytics</th><td><span class="cmp__yes" aria-label="Included">✓</span></td><td><span class="cmp__yes" aria-label="Included">✓</span></td><td><span class="cmp__yes" aria-label="Included">✓</span></td></tr>
-          <tr><th scope="row">Products</th><td>Limited</td><td>Unlimited</td><td>Unlimited</td></tr>
-          <tr><th scope="row">Advanced SuperDM</th><td><span class="cmp__no" aria-label="Not included">—</span></td><td><span class="cmp__yes" aria-label="Included">✓</span></td><td><span class="cmp__yes" aria-label="Included">✓</span></td></tr>
-          <tr><th scope="row">SuperDM workflows</th><td><span class="cmp__no" aria-label="Not included">—</span></td><td><span class="cmp__yes" aria-label="Included">✓</span></td><td><span class="cmp__yes" aria-label="Included">✓</span></td></tr>
-          <tr><th scope="row">Advanced analytics</th><td><span class="cmp__no" aria-label="Not included">—</span></td><td><span class="cmp__yes" aria-label="Included">✓</span></td><td><span class="cmp__yes" aria-label="Included">✓</span></td></tr>
-          <tr><th scope="row">Customization</th><td><span class="cmp__no" aria-label="Not included">—</span></td><td><span class="cmp__yes" aria-label="Included">✓</span></td><td><span class="cmp__yes" aria-label="Included">✓</span></td></tr>
-          <tr><th scope="row">Business Connect</th><td><span class="cmp__no" aria-label="Not included">—</span></td><td>Coming soon</td><td>Coming soon</td></tr>
-          <tr><th scope="row">Fee per sale</th><td>5%</td><td>5%</td><td>5%</td></tr>
-        </tbody>
-      </table>
-    </div>
+    <div data-plans-table="creators"></div>
   </div>
 </section>
 
@@ -128,6 +89,8 @@
     </div>
     <div class="faq">
       <details><summary>Is it free?</summary><p>Your bio page, links, shareable profile and basic analytics are free forever. Pro adds advanced SuperDM, SuperDM workflows and unlimited products.</p></details>
+      <details><summary>How much is Pro?</summary><p>$10 a month, or $99 a year. The price is the same for creators and realtors; the plans just include different tools.</p></details>
+      <details><summary>What do realtors get on Pro?</summary><p>Your trust card (homes sold, reviews, areas and licence), your brokerage’s listings on your page kept up to date, SuperDM for open houses, commission offers from your brokerage, and advanced analytics.</p></details>
       <details><summary>What do founding creators get?</summary><p>Founding creators on the waitlist get Pro free for their first year.</p></details>
       <details><summary>Do I need 1,000 followers?</summary><p>No. Any size, from day one.</p></details>
       <details><summary>How do I get paid when I sell something?</summary><p>Buyers pay by UPI or card at checkout. The money shows up in your supergrowth earnings, and you withdraw it to your bank account.</p></details>
@@ -155,7 +118,8 @@
   </div>
 </footer>
 
-<script src="script.js?v=20261124b"></script>
-<script src="hero-ascii.js?v=20261124b"></script>
+<script src="script.js?v=20261125b"></script>
+<script src="hero-ascii.js?v=20261125b"></script>
+<script src="pricing.js?v=20261125b"></script>
 </body>
 </html>

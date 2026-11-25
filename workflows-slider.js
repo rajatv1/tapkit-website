@@ -9,7 +9,8 @@
   var root = document.getElementById('workflows');
   if (!root || !root.classList.contains('wfx')) return;
 
-  var FLOWS = [
+  // a page can bring its own workflows (realtors.html sets window.WFX_FLOWS before this script)
+  var FLOWS = window.WFX_FLOWS || [
     { niche: 'Food', title: 'Sell the full recipe',
       steps: ['Comment “RECIPE”', 'DM with a button to the recipe', 'Pays ₹49', 'Recipe PDF downloads'],
       text: 'Someone comments RECIPE on your reel. The DM goes out with a button, they pay ₹49 and the recipe PDF downloads straight away.' },

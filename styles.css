@@ -2078,3 +2078,85 @@ main > .hero--full .hero__inner.container{max-width:1320px;padding-left:44px;pad
   .pcx__card{display:grid!important;grid-template-columns:1fr 1fr;column-gap:20px;align-content:start}
   .pcx__card > .pcm__head,.pcx__card > .pcx__row,.pcx__card > .pcm__spark,.pcx__card > .pcm__stats,.pcx__card > .pcx__foot{grid-column:1/-1}
 }
+.pcx__photo{width:40px!important;height:40px!important;object-fit:cover;object-position:50% 30%;border-radius:999px!important;background:var(--line)!important;padding:0}
+
+/* ---------------- Plans and prices (pricing.js): dollars first, India price under it ---------------- */
+.plx__tabs{display:flex;justify-content:center;margin:0 auto 28px;width:max-content;max-width:100%;padding:4px;gap:4px;background:#fff;border:1px solid var(--line);border-radius:999px!important}
+.plx__tabs button{font:inherit;font-size:14px;font-weight:600;padding:9px 20px;border:0;background:none;color:var(--muted);cursor:pointer;border-radius:999px!important;transition:background .2s,color .2s}
+.plx__tabs button[aria-selected="true"]{background:var(--ink);color:#fff}
+.plx__tabs button:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+.plx__grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px;max-width:1080px;margin:0 auto}
+.plx__card{position:relative;display:flex;flex-direction:column;padding:28px 26px 26px;background:#fff;border:1px solid var(--line);border-radius:18px!important;box-shadow:none}
+.plx__card--hot{border:1.5px solid var(--accent)}
+.plx__flag{position:absolute;top:-11px;left:24px;font-size:11px;font-weight:700;padding:4px 10px;background:var(--accent);color:#fff;border-radius:999px!important}
+.plx__name{font-size:16px;font-weight:650}
+.plx__price{margin-top:16px;display:flex;align-items:baseline;gap:4px}
+.plx__price b{font-size:42px;font-weight:700;letter-spacing:-.04em;line-height:1}
+.plx__price i{font-style:normal;font-size:14px;color:var(--muted)}
+.plx__inr{margin:8px 0 0;font-size:13.5px;font-weight:600;color:var(--ink-2)}
+.plx__note{margin:4px 0 0;font-size:12.5px;color:var(--muted)}
+.plx__card ul{list-style:none;margin:22px 0 0;padding:22px 0 0;border-top:1px solid var(--line-2);display:flex;flex-direction:column;gap:11px;flex:1}
+.plx__card li{display:flex;gap:10px;align-items:flex-start;font-size:14px;line-height:1.4;color:var(--ink-2)}
+.plx__tick{flex:none;width:18px;height:18px;margin-top:1px}
+.plx__tick circle{fill:var(--accent)}
+.plx__tick path{fill:none;stroke:#fff;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+.plx__soon{margin-top:18px;padding:12px 14px;background:var(--bg-tint);border:1px dashed var(--line);border-radius:10px!important}
+.plx__soon span{font-size:10.5px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--warn)}
+.plx__soon b{display:block;margin-top:4px;font-size:13.5px}
+.plx__soon p{margin:2px 0 0;font-size:12.5px;color:var(--muted)}
+.plx__btn{margin-top:24px;display:block;text-align:center;padding:12px 14px;font-size:14px;font-weight:600;text-decoration:none;color:var(--ink);background:#fff;border:1px solid var(--line);border-radius:10px!important;transition:border-color .15s,background .15s}
+.plx__btn:hover{border-color:var(--ink)}
+.plx__btn--hot{background:var(--accent);border-color:var(--accent);color:#fff}
+.plx__btn--hot:hover{background:#c0331a;border-color:#c0331a}
+.plx__founding{max-width:1080px;margin:22px auto 0;text-align:center;font-size:14px;color:var(--ink-2)}
+.plx__founding span{color:var(--accent)}
+
+.plx__tablewrap{max-width:1080px;margin:0 auto;overflow-x:auto;background:#fff;border:1px solid var(--line);border-radius:18px!important;padding:8px 28px}
+.plx__table{width:100%;min-width:620px;border-collapse:collapse;table-layout:fixed}
+.plx__table th,.plx__table td{padding:15px 10px;border-bottom:1px solid var(--line-2);font-size:14px;text-align:center;color:var(--ink-2)}
+.plx__table tr:last-child th,.plx__table tr:last-child td{border-bottom:0}
+.plx__table thead th{font-size:15px;font-weight:650;color:var(--ink);vertical-align:bottom;border-bottom:1px solid var(--line)}
+.plx__table thead th i{display:block;margin-top:4px;font-style:normal;font-size:12px;font-weight:500;color:var(--muted)}
+.plx__table tbody th{text-align:left;font-weight:500;padding-left:0}
+.plx__table th:first-child{width:36%}
+.plx__table .plx__tick{display:inline-block;vertical-align:middle}
+.plx__hotcol{color:var(--accent)!important}
+.plx__dash{color:var(--muted-2)}
+
+@media (max-width:900px){
+  .plx__grid{grid-template-columns:1fr;max-width:460px}
+  .plx__card--hot{margin-top:8px}
+}
+@media (max-width:560px){
+  .plx__tablewrap{padding:4px 16px}
+  .plx__table{min-width:560px}
+  .plx__table th:first-child{width:40%}
+  .plx__price b{font-size:36px}
+}
+
+/* ---------------- realtors.html: brokerage cards, listing mockup, solo trust card ---------------- */
+.rex__card{padding:24px}
+.rex__card i{display:block;font-style:normal;font-size:11.5px;font-weight:700;letter-spacing:.07em;text-transform:uppercase;color:var(--accent)}
+.rex__card b{display:block;margin-top:8px;font-size:16.5px;font-weight:650;letter-spacing:-.01em}
+.rex__card p{margin-top:8px;font-size:14.5px;line-height:1.55;color:var(--muted)}
+.rex__more{margin:20px 0 0;text-align:center;font-size:14.5px}
+.rex__more a{color:var(--accent);font-weight:600;text-decoration:none}
+.rex__more a:hover{text-decoration:underline}
+.re__cover{background:linear-gradient(150deg,#233d4d,#5c6b75)!important}
+.re__tag{font-size:10px;font-weight:700;padding:3px 7px;border-radius:999px!important;background:#fde7e1;color:var(--accent);white-space:nowrap}
+.mph__photo{object-fit:cover;padding:0;background:var(--line)!important}
+.pcx--solo .pcm{padding-top:22px}
+/* profile card: size to its content instead of stretching to a fixed grid height (no empty space under the footer) */
+@media (min-width:901px){
+  .tools__grid{height:auto}
+  .pcx .pcm{flex:0 0 auto}
+  .pcx__card{align-self:start}
+}
+/* compact profile cards: less height, same content */
+.pcx .pcx__card{gap:8px!important;padding:12px 14px!important}
+.pcx .pcm__num,.pcx__num{font-size:26px}
+.pcx .pcm__spark{height:22px}
+.pcx__block{gap:5px;padding-top:7px}
+.pcx__bars{gap:3px}
+.pcx__foot{padding-top:8px}
+.pcx .pcm{padding-top:12px}

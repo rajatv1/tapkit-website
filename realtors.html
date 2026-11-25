@@ -8,7 +8,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
-<link rel="stylesheet" href="styles.css?v=20261124b" />
+<link rel="stylesheet" href="styles.css?v=20261125b" />
 <link rel="icon" type="image/svg+xml" href="assets/logo-mark.svg" />
 </head>
 <body>
@@ -61,61 +61,193 @@
   </div>
 </section>
 
-<section class="section">
+<!-- ───────────────────────── TOOLS: trust card, SuperDM, listings ───────────────────────── -->
+<section class="section tools" id="tools" aria-labelledby="toolsT">
   <div class="container">
-    <div class="section__head"><h2>For realtors</h2></div>
-    <div class="grid-3">
-      <div class="card"><span class="feat-ico">🏡</span><b class="pp-plan__name">Your listings, on your page</b><p>The homes your brokerage shares appear as cards on your bio page, with the photo, price and a tap through to the listing. Show all of them, or pick the ones you want.</p></div>
-      <div class="card"><span class="feat-ico">🔄</span><b class="pp-plan__name">Always current</b><p>When a price drops or a home sells, your page changes with it. No sold homes sitting on your profile, no stale prices.</p></div>
-      <div class="card"><span class="feat-ico">💬</span><b class="pp-plan__name">SuperDM for open houses</b><p>Someone comments "HOME" on your reel and gets the listing in their DMs straight away, while you're busy showing the place.</p></div>
-      <div class="card"><span class="feat-ico">↗</span><b class="pp-plan__name">Links that count taps</b><p>Short links for each home, so you can see which listing people actually tap on, and from where.</p></div>
-      <div class="card"><span class="feat-ico">💰</span><b class="pp-plan__name">See the commission offer</b><p>When your brokerage runs a campaign on a home ("bring a buyer, earn this much"), you see it beside the home and can say you're working on it.</p></div>
-      <div class="card"><span class="feat-ico">📋</span><b class="pp-plan__name">Your page is still yours</b><p>Your links, your products and your look stay the same. The listings are one more section, not a takeover.</p></div>
+    <div class="section__head">
+      <h2 id="toolsT">Bring buyers in. Show your track record. Close the deal.</h2>
+      <p>Your trust card, SuperDM and your listings, all from the one link in your bio.</p>
+    </div>
+    <div class="tools__grid">
+
+      <!-- Trust card -->
+      <article class="card tool tool--tall pcx pcx--solo">
+        <div class="tool__art pcm">
+          <div class="pcx__stack">
+            <div class="pcm__card pcx__card pcx__card--realtor" aria-hidden="false">
+              <div class="pcm__head">
+                <img class="pcm__av pcx__av--re pcx__photo" src="assets/realtor-rahul.jpg" alt="" width="40" height="40" />
+                <span class="pcm__who"><b>Rahul Sharma</b><small>Realtor · Pune</small></span>
+                <span class="pcx__verified"><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M5.5 10.4l3 3L14.5 7"/></svg>Verified</span>
+              </div>
+              <div class="pcx__row">
+                <div class="pcm__big"><span class="pcx__num">142</span><small>Homes sold</small></div>
+                <span class="pcx__stars" aria-label="Rated 4.9 out of 5">★ 4.9 <small>· 86 reviews</small></span>
+              </div>
+              <dl class="pcm__stats">
+                <div><dt>Years</dt><dd>9</dd></div>
+                <div><dt>Avg. days to sell</dt><dd>21</dd></div>
+                <div><dt>Listings now</dt><dd>12</dd></div>
+              </dl>
+              <div class="pcx__block">
+                <span class="pcx__label">Areas</span>
+                <div class="pcx__chips"><span>Baner</span><span>Aundh</span><span>Wakad</span><span>Kothrud</span></div>
+              </div>
+              <div class="pcx__block">
+                <span class="pcx__label">What clients say</span>
+                <blockquote class="pcx__quote">“Sold our flat in three weeks, and he kept us posted at every step.”<cite>Priya S., seller in Baner</cite></blockquote>
+              </div>
+              <div class="pcx__block">
+                <span class="pcx__label">Licence</span>
+                <p class="pcx__meta">MahaRERA agent · registration shown on page</p>
+              </div>
+              <div class="pcx__foot"><span><small>Free</small><b>Home valuation</b></span><span class="pcx__cta">Book a call</span></div>
+            </div>
+          </div>
+        </div>
+        <div class="tool__copy">
+          <h3>Trust card</h3>
+          <p>Homes sold, reviews, areas and licence on one page, so buyers and sellers trust you before they call.</p>
+        </div>
+      </article>
+
+      <!-- SuperDM for open houses -->
+      <article class="card tool tool--dm">
+        <div class="tool__copy">
+          <h3>SuperDM for open houses</h3>
+          <p>Someone comments “HOME” on your reel and gets the listing in their DMs, while you’re busy showing the place.</p>
+        </div>
+        <div class="mph" aria-hidden="true"><span class="mph__notch"></span><div class="mph__screen"><div class="mph__bar"><b>9:41</b><i></i></div><div class="mph__head"><span class="mph__av">N</span><span><b>neha.k</b><small>Instagram DM</small></span></div><div class="tool__art sdm">
+          <div class="sdm__b sdm__b--in"><b>@neha.k</b> commented “HOME 🏡” on your reel</div>
+          <div class="sdm__row">
+            <span class="sdm__bot"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v3"/><rect x="5" y="7" width="14" height="11" rx="3"/><circle cx="9.5" cy="12.5" r="1"/><circle cx="14.5" cy="12.5" r="1"/><path d="M9 16h6"/></svg></span>
+            <div class="sdm__stack">
+              <div class="sdm__b">Here’s the 3BHK in Baner from today’s reel 👇 Open house on Saturday, 11 to 1.<span class="sdm__btn">See the home</span></div>
+            </div>
+          </div>
+        </div></div></div>
+      </article>
+
+      <!-- Listings on your page -->
+      <article class="card tool tool--shop">
+        <div class="tool__copy">
+          <h3>Your listings, always current</h3>
+          <p>Your brokerage’s homes on your page. Price drops and sales update on their own.</p>
+        </div>
+        <div class="mph" aria-hidden="true"><span class="mph__notch"></span><div class="mph__screen"><div class="mph__bar"><b>9:41</b><i></i></div><div class="mph__head"><img class="mph__av mph__photo" src="assets/realtor-rahul.jpg" alt="" /><span><b>Rahul Sharma</b><small>supergrowth.in/rahul</small></span></div><div class="tool__art shop">
+          <div class="shop__item">
+            <span class="shop__cover re__cover"><b>3BHK<br>Baner</b></span>
+            <span class="shop__info"><b>3BHK flat, Baner</b><small>1,450 sq ft · ready to move</small><span class="shop__row"><strong>₹1.6 Cr</strong><span class="re__tag">Price dropped</span></span></span>
+          </div>
+          <div class="shop__sales">
+            <span class="shop__sale"><i>✓</i><span><b>Sold · 2BHK in Aundh</b><small>Taken off your page for you</small></span></span>
+          </div>
+        </div></div></div>
+      </article>
+
     </div>
   </div>
 </section>
 
-<section class="section section--tint">
+<!-- ───────────────────────── REALTOR WORKFLOWS (workflows-slider.js; the flows are set below, window.WFX_FLOWS) ───────────────────────── -->
+<section class="section wfx" id="workflows" aria-labelledby="wfxT">
   <div class="container">
-    <div class="section__head"><h2>For brokerages</h2></div>
-    <div class="grid-3">
-      <div class="card"><span class="feat-ico">🏢</span><b class="pp-plan__name">Add your homes once</b><p>Type a listing in, or paste the link to its page on your own website and we read the title, price and picture for you to check.</p></div>
-      <div class="card"><span class="feat-ico">🔗</span><b class="pp-plan__name">One link for your realtors</b><p>Send your team one join link. Make separate links for an office or a team, see who joined by which, and turn one off without the others.</p></div>
-      <div class="card"><span class="feat-ico">👁</span><b class="pp-plan__name">Open or private</b><p>Switch a home between open and private and it appears on, or leaves, every realtor's page at once.</p></div>
-      <div class="card"><span class="feat-ico">📣</span><b class="pp-plan__name">Realtor campaigns</b><p>Put a commission offer on a home that needs a push. Your realtors see it, and you see who is working on it. You pay the commission the way you always do.</p></div>
-      <div class="card"><span class="feat-ico">🤖</span><b class="pp-plan__name">An assistant for your listings</b><p>Suggestions from your own listings, and answers to questions about them, without digging through a spreadsheet.</p></div>
-      <div class="card"><span class="feat-ico">📡</span><b class="pp-plan__name">Listing feeds</b><p>Connect your listing feed (like CREA's DDF in Canada) with your own credentials, and new homes come in on their own.</p></div>
+    <div class="wfx__head">
+      <h2 id="wfxT">Ready-made setups for the way realtors already post</h2>
+      <p>Pick one, change the word and what gets sent, and turn it on. Every workflow starts with someone commenting, replying or messaging you first. Never a cold message.</p>
+    </div>
+    <div class="wfx__ctl">
+      <button class="wfx__arrow" type="button" data-wfx-prev aria-label="Previous workflow"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" aria-hidden="true"><path d="M15 6l-6 6 6 6" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+      <div class="wfx__track" aria-hidden="true"><span class="wfx__fill"></span><span class="wfx__knob"></span></div>
+      <button class="wfx__arrow" type="button" data-wfx-next aria-label="Next workflow"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" aria-hidden="true"><path d="M9 6l6 6-6 6" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+    </div>
+    <div class="wfx__cards" role="tablist" aria-label="Workflows">
+      <button class="wfx__card is-on" type="button" role="tab" aria-selected="true" data-wfx="0"><i>Open house</i><b>Fill your open house</b><span>Comment a word, get the home, book a slot.</span></button>
+      <button class="wfx__card" type="button" role="tab" aria-selected="false" data-wfx="1"><i>New listing</i><b>Launch a new home</b><span>A story reply opens the listing in their DMs.</span></button>
+      <button class="wfx__card" type="button" role="tab" aria-selected="false" data-wfx="2"><i>Sellers</i><b>Get valuation requests</b><span>Comment VALUE, leave details, book a call.</span></button>
+      <button class="wfx__card" type="button" role="tab" aria-selected="false" data-wfx="3"><i>Price drop</i><b>Share today’s price</b><span>Your page already shows the new price.</span></button>
+      <button class="wfx__card" type="button" role="tab" aria-selected="false" data-wfx="4"><i>Rentals</i><b>Send every rental at once</b><span>One word, all your rentals in one place.</span></button>
+      <button class="wfx__card" type="button" role="tab" aria-selected="false" data-wfx="5"><i>Brokerage</i><b>Work a commission offer</b><span>See the offer beside the home and take it up.</span></button>
+    </div>
+    <div class="wfx__stage" role="tabpanel" aria-live="polite">
+      <div class="wfx__art">
+        <div class="wfx__flow" id="wfxFlow">
+          <span class="wfx__step">Comment “HOME”</span><i class="wfx__down" aria-hidden="true">↓</i>
+          <span class="wfx__step">DM with the listing</span><i class="wfx__down" aria-hidden="true">↓</i>
+          <span class="wfx__step">Leaves their number</span><i class="wfx__down" aria-hidden="true">↓</i>
+          <span class="wfx__step">Booked for Saturday’s open house</span>
+        </div>
+      </div>
+      <div class="wfx__copy">
+        <h3 id="wfxTitle"><span>Open house:</span><em>Fill your open house</em></h3>
+        <p id="wfxText">Someone comments HOME on your reel. The listing lands in their DMs with the open-house time, they leave their number, and you know who is coming.</p>
+      </div>
     </div>
   </div>
 </section>
 
-<section class="section">
+<!-- ───────────────────────── FOR BROKERAGES ───────────────────────── -->
+<section class="section section--tint" id="brokerages">
+  <div class="container">
+    <div class="section__head">
+      <h2>For brokerages</h2>
+      <p>Add your homes once. Every realtor on your team shows them on their own page.</p>
+    </div>
+    <div class="grid-3 rex">
+      <div class="card rex__card"><i>Listings</i><b>Add your homes once</b><p>Type a listing in, or paste the link to its page on your own website and we read the title, price and picture for you to check.</p></div>
+      <div class="card rex__card"><i>Team</i><b>One link for your realtors</b><p>Send your team one join link. Make separate links for an office or a team, see who joined by which, and turn one off without the others.</p></div>
+      <div class="card rex__card"><i>Control</i><b>Open or private</b><p>Switch a home between open and private and it appears on, or leaves, every realtor’s page at once.</p></div>
+      <div class="card rex__card"><i>Campaigns</i><b>Realtor campaigns</b><p>Put a commission offer on a home that needs a push. Your realtors see it, and you see who is working on it. You pay the commission the way you always do.</p></div>
+      <div class="card rex__card"><i>Assistant</i><b>An assistant for your listings</b><p>Suggestions from your own listings, and answers to questions about them, without digging through a spreadsheet.</p></div>
+      <div class="card rex__card"><i>Feeds</i><b>Listing feeds</b><p>Connect your listing feed (like CREA’s DDF in Canada) with your own credentials, and new homes come in on their own.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ───────────────────────── PRICING (pricing.js) ───────────────────────── -->
+<section class="section" id="pricing">
+  <div class="container">
+    <div class="section__head">
+      <h2>Pricing for realtors</h2>
+      <p>Start free. Pro is $10 a month.</p>
+    </div>
+    <div data-plans="realtors"></div>
+    <p class="rex__more"><a href="pricing.html#realtors">See everything in each plan →</a></p>
+  </div>
+</section>
+
+<!-- ───────────────────────── HOW IT WORKS ───────────────────────── -->
+<section class="section section--tint" id="how">
   <div class="container">
     <div class="section__head"><h2>Up and running in three steps</h2></div>
     <ol class="grid-3 steps">
-      <li class="card step"><span class="step__n">1</span><b>The brokerage adds its homes</b><p>By hand, from your website's listing pages, or from a feed.</p></li>
+      <li class="card step"><span class="step__n">1</span><b>The brokerage adds its homes</b><p>By hand, from your website’s listing pages, or from a feed.</p></li>
       <li class="card step"><span class="step__n">2</span><b>Realtors join with one link</b><p>Each realtor signs up, claims their supergrowth page and picks which homes to show.</p></li>
       <li class="card step"><span class="step__n">3</span><b>Share and sell</b><p>The bio link goes in Instagram. Buyers tap through, DMs go out, and every page stays current.</p></li>
     </ol>
   </div>
 </section>
 
-<section class="section section--tint" id="faq">
+<!-- ───────────────────────── FAQ ───────────────────────── -->
+<section class="section" id="faq">
   <div class="container">
     <div class="section__head"><h2>What realtors ask us</h2></div>
     <div class="faq">
+      <details><summary>How much does it cost?</summary><p>You can start free with your bio page, links and basic analytics. Pro is $10 a month or $99 a year, and adds your trust card, your brokerage’s listings, SuperDM for open houses and commission offers.</p></details>
       <details><summary>Do I need my brokerage to join?</summary><p>For the shared listings, yes: your brokerage adds the homes and sends you the link. Your bio page, links and SuperDM work on their own, with or without a brokerage.</p></details>
+      <details><summary>What goes on my trust card?</summary><p>Homes sold, your rating and reviews, years in the business, the areas you cover, your licence or registration, and a way to book a call. You choose what to show.</p></details>
       <details><summary>Does supergrowth pay the commission?</summary><p>No. supergrowth shows the offer and who took it up. The commission is paid by your brokerage, the way it pays any other.</p></details>
-      <details><summary>What happens if I move to another brokerage?</summary><p>Your page, your links and your followers stay with you. The old brokerage's homes leave your page, and the new one's come in when you join with their link.</p></details>
+      <details><summary>What happens if I move to another brokerage?</summary><p>Your page, your links and your followers stay with you. The old brokerage’s homes leave your page, and the new one’s come in when you join with their link.</p></details>
       <details><summary>Is it live?</summary><p>supergrowth is pre-launch. Realtors and brokerages on the waitlist get in with the first batches.</p></details>
     </div>
   </div>
 </section>
 
+<!-- ───────────────────────── CTA ───────────────────────── -->
 <section class="cta">
   <div class="container cta__inner">
     <h2>Bring your listings to your bio</h2>
-    <p>Join the waitlist as a realtor or a brokerage, and we'll get you in early.</p>
+    <p>Join the waitlist as a realtor or a brokerage, and we’ll get you in early.</p>
     <div class="hero__cta"><a class="btn btn--dark btn--lg" href="index.html#waitlist">Join the waitlist</a></div>
   </div>
 </section>
@@ -131,7 +263,27 @@
   </div>
 </footer>
 
-<script src="script.js?v=20261124b"></script>
-<script src="hero-ascii.js?v=20261124b"></script>
+<script src="script.js?v=20261125b"></script>
+<script src="hero-ascii.js?v=20261125b"></script>
+<script>
+/* the realtor workflows for workflows-slider.js */
+window.WFX_FLOWS = [
+  { niche: "Open house", title: "Fill your open house", steps: ["Comment “HOME”", "DM with the listing", "Leaves their number", "Booked for Saturday’s open house"],
+    text: "Someone comments HOME on your reel. The listing lands in their DMs with the open-house time, they leave their number, and you know who is coming." },
+  { niche: "New listing", title: "Launch a new home", steps: ["Replies “NEW” to your story", "DM with the new home", "Every tap counted"],
+    text: "Post the new home to your story. Anyone who replies NEW gets it in their DMs, and you can see who tapped through and how often." },
+  { niche: "Sellers", title: "Get valuation requests", steps: ["Comment “VALUE”", "Leaves their area and email", "Free valuation call booked"],
+    text: "Homeowners comment VALUE, tell you where they live and leave an email, and book a free valuation call with you. Seller leads, from your own reels." },
+  { niche: "Price drop", title: "Share today’s price", steps: ["Comment “PRICE”", "DM with today’s price", "Your page already shows it"],
+    text: "When your brokerage drops a price, your page changes on its own. Anyone who comments PRICE gets the new price and the home in their DMs." },
+  { niche: "Rentals", title: "Send every rental at once", steps: ["Comment “RENT”", "DM with your page", "Every rental in one place"],
+    text: "One word gets them every rental you have, on one page. When a place is let, it leaves your page by itself." },
+  { niche: "Brokerage", title: "Work a commission offer", steps: ["Brokerage puts an offer on a home", "You see it beside the home", "Say you are working on it", "Commission paid by your brokerage"],
+    text: "Your brokerage puts a bring-a-buyer offer on a home that needs a push. You see it on your page, say you are on it, and your brokerage pays you as usual." }
+];
+</script>
+<script src="tools.js?v=20261125b"></script>
+<script src="workflows-slider.js?v=20261125b"></script>
+<script src="pricing.js?v=20261125b"></script>
 </body>
 </html>

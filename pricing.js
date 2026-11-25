@@ -36,7 +36,7 @@
       pro:    ['Everything in Free', 'Trust card: homes sold, reviews, areas, licence', 'Your brokerage’s listings on your page', 'Price drops and sales update on their own', 'SuperDM for open houses', 'Commission offers from your brokerage', 'Advanced analytics and customization'],
       soon:   null,
       flag:   'Best value',
-      founding: 'Brokerages: join the waitlist as a brokerage and we’ll set up your team with you.',
+      founding: 'First 25 brokerages are set up by us personally, with onboarding done for you inside a week.',
       table: [
         ['Bio page', 'yes', 'yes', 'yes'], ['Links with tap counts', 'yes', 'yes', 'yes'], ['Basic analytics', 'yes', 'yes', 'yes'],
         ['Trust card', 'no', 'yes', 'yes'], ['Your brokerage’s listings on your page', 'no', 'yes', 'yes'],

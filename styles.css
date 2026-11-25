@@ -2201,4 +2201,4 @@ main > .hero--full .hero__inner.container{max-width:1320px;padding-left:44px;pad
 }
 
 /* realtors page: three bigger template tiles */
-@media (min-width:901px){ .layouts__row--3{--cw:250;gap:22px} .layouts__row--3 .lay__frame{height:480px} }
+@media (min-width:901px){ .layouts__row--3{--cw:250;gap:22px} }
